@@ -25,7 +25,6 @@ public class GrammarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar);
         toolbar = (Toolbar) findViewById(R.id.eeToolbar);
-//        getFragmentManager().beginTransaction().add(R.id.mainFragment, fragment).commit();
 
         getSupportFragmentManager().beginTransaction().add(R.id.frame, new GrammarFragment()).commit();
         grammarTv = (TextView)toolbar.findViewById(R.id.grammar);
@@ -49,9 +48,7 @@ public class GrammarActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setHomeButtonEnabled(true);
+
     }
 
     void setTableLinksFragment(){

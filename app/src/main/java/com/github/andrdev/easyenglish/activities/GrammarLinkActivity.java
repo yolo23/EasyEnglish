@@ -24,7 +24,6 @@ public class GrammarLinkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link_open);
         toolbar = (Toolbar) findViewById(R.id.eeToolbar);
-//        getFragmentManager().beginTransaction().add(R.id.mainFragment, fragment).commit();
         ((TextView)toolbar.findViewById(R.id.title)).setText(getIntent().getExtras().getString("title"));
         WebView webView = (WebView)findViewById(R.id.webView);
         WebSettings settings = webView.getSettings();

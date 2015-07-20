@@ -21,111 +21,35 @@ import com.github.andrdev.easyenglish.RecyclerItemClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
-
-
-    SlidingPaneLayout mSlidingPanel;
-    RecyclerView mMenuList;
-    ImageView appImage;
-    TextView TitleText;
-    private Toolbar toolbar;
-    static List<DrawerLine> dividerLines = new ArrayList<>();
-    static{
-        dividerLines.add(new DrawerLine(R.mipmap.gramm, "Грамматика"));
-        dividerLines.add(new DrawerLine(R.mipmap.irregular, "Неправильные глаголы"));
-        dividerLines.add(new DrawerLine(R.mipmap.audio, "Аудио-курс"));
-        dividerLines.add(new DrawerLine(R.mipmap.video, "Видео-курс"));
-        dividerLines.add(new DrawerLine(R.mipmap.memo, "Памятки"));
-        dividerLines.add(new DrawerLine(R.mipmap.facts, "А вы знали?"));
-        dividerLines.add(new DrawerLine(R.mipmap.about, "О приложении"));
-    }
+public class MainActivity extends BaseSlidingActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mSlidingPanel = (SlidingPaneLayout) findViewById(R.id.SlidingPanel);
-        mMenuList = (RecyclerView) findViewById(R.id.menuList);
-        toolbar = (Toolbar) findViewById(R.id.eeToolbar);
-        toolbar.setNavigationIcon(R.mipmap.menu_icon);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mSlidingPanel.isOpen()){
-                    mSlidingPanel.closePane();
-                } else {
-                    mSlidingPanel.openPane();
-                }
-            }
-        });
-        mMenuList.setLayoutManager(new LinearLayoutManager(this));
-        mMenuList.setAdapter(new DrawerAdapter(this, dividerLines));
-        mMenuList.getAdapter().notifyDataSetChanged();
-        mMenuList.addOnItemTouchListener(new RecyclerItemClickListener(this,
-                new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        onRowClick(position);
-                    }
-                }));
-        WebView webView = (WebView)findViewById(R.id.mainFragment);
-        WebSettings settings = webView.getSettings();
-        webView.loadUrl("file:///android_asset/basic_grammar.html");
-        settings.setDefaultTextEncodingName("utf-8");
-        toolbar.findViewById(R.id.goGrammar).setOnClickListener(new View.OnClickListener() {
+        initWebView();
+        getToolbar().findViewById(R.id.goGrammar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, GrammarActivity.class);
                 startActivity(intent);
             }
         });
-        mSlidingPanel.setParallaxDistance(200);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setHomeButtonEnabled(true);
     }
 
-    private void onRowClick(int position) {
-        Intent intent;
-        switch (position){
-            case 0:
-                mSlidingPanel.closePane();
-
-                return;
-            case 1:
-                intent = new Intent(this, VerbsActivity.class);
-                startActivity(intent);
-
-                break;
-            case 2:
-                intent = new Intent(this, AudioActivity.class);
-
-                startActivity(intent);
-                break;
-            case 3:
-                intent = new Intent(this, VideoActivity.class);
-
-                startActivity(intent);
-                break;
-            case 4:
-                intent = new Intent(this, MemoActivity.class);
-
-                startActivity(intent);
-                break;
-            case 5:
-                intent = new Intent(this, FactsActivity.class);
-
-                startActivity(intent);
-                break;
-            case 6:
-                intent = new Intent(this, AboutActivity.class);
-
-                startActivity(intent);
-                break;
-            default:
-                break;
-        }
-        finish();
+    private void initWebView() {
+        WebView webView = (WebView)findViewById(R.id.mainFragment);
+        WebSettings settings = webView.getSettings();
+        webView.loadUrl("file:///android_asset/basic_grammar.html");
+        settings.setDefaultTextEncodingName("utf-8");
     }
 
+    @Override
+    int getMainLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    int getCurrentActivityPostion() {
+        return 0;
+    }
 }

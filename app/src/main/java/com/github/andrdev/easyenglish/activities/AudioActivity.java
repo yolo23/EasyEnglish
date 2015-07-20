@@ -49,19 +49,15 @@ import retrofit.client.Response;
 /**
  * Created by taiyokaze on 7/18/15.
  */
-public class AudioActivity extends AppCompatActivity implements MediaController.MediaPlayerControl {
+public class AudioActivity extends BaseSlidingActivity implements MediaController.MediaPlayerControl {
 
 
     //service
     private AudioPlayerService musicSrv;
     private Intent playIntent;
     private boolean musicBound=false;
-    private MusicController controller;
     private boolean paused=false, playbackPaused=true;
 
-    SlidingPaneLayout mSlidingPanel;
-    RecyclerView mMenuList;
-    ImageView appImage;
     TextView titleSong;
 
     RecyclerView recyclerView;
@@ -76,30 +72,20 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
     ImageView next;
     ImageView download;
 
-    private Toolbar toolbar;
-    static List<DrawerLine> dividerLines = new ArrayList<>();
-
-    static {
-        dividerLines.add(new DrawerLine(R.mipmap.gramm, "Грамматика"));
-        dividerLines.add(new DrawerLine(R.mipmap.irregular, "Неправильные глаголы"));
-        dividerLines.add(new DrawerLine(R.mipmap.audio, "Аудио-курс"));
-        dividerLines.add(new DrawerLine(R.mipmap.video, "Видео-курс"));
-        dividerLines.add(new DrawerLine(R.mipmap.memo, "Памятки"));
-        dividerLines.add(new DrawerLine(R.mipmap.facts, "А вы знали?"));
-        dividerLines.add(new DrawerLine(R.mipmap.about, "О приложении"));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_audio);
         initToolbar();
-        initDrawer();
         initAudioList();
         setOnline();
         initControls();
         findViewById(R.id.progressAudio).setVisibility(View.INVISIBLE);
+    }
 
+    @Override
+    int getMainLayout() {
+        return R.layout.activity_audio;
     }
 
     private void initControls() {
@@ -158,7 +144,6 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
     private void downloadSong(EnglishAudioItem item) {
         new DownloadFile().execute(item);
         findViewById(R.id.progressAudio).setVisibility(View.VISIBLE);
-
     }
 
     private void initAudioList() {
@@ -188,43 +173,20 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
 
             @Override
             public void failure(RetrofitError error) {
-
             }
         };
-
         EasyEnglishRetroWorker.getInstance().getSongs(callback);
     }
 
-    private void initDrawer() {
-        mSlidingPanel = (SlidingPaneLayout) findViewById(R.id.SlidingPanel);
-        mSlidingPanel.setParallaxDistance(200);
-        mMenuList = (RecyclerView) findViewById(R.id.menuList);
-        mMenuList.setLayoutManager(new LinearLayoutManager(this));
-        mMenuList.setAdapter(new DrawerAdapter(this, dividerLines));
-        mMenuList.getAdapter().notifyDataSetChanged();
-        mMenuList.addOnItemTouchListener(new RecyclerItemClickListener(this,
-                new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        onRowClick(position);
-                    }
-                }));
+
+
+    @Override
+    int getCurrentActivityPostion() {
+        return 2;
     }
 
     private void initToolbar() {
-        toolbar = (Toolbar) findViewById(R.id.eeToolbar);
-        toolbar.setNavigationIcon(R.mipmap.menu_icon);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mSlidingPanel.isOpen()) {
-                    mSlidingPanel.closePane();
-                } else {
-                    mSlidingPanel.openPane();
-                }
-            }
-        });
-        online = (TextView)toolbar.findViewById(R.id.online);
+        online = (TextView)getToolbar().findViewById(R.id.online);
         online.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -232,14 +194,13 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
             }
         });
 
-        offline = (TextView)toolbar.findViewById(R.id.offline);
+        offline = (TextView)getToolbar().findViewById(R.id.offline);
         offline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setOffline();
             }
         });
-        setOnline();
     }
 
     @Override
@@ -260,13 +221,11 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
     protected void onResume(){
         super.onResume();
         if(paused){
-//            setController();
             paused=false;
         }
     }
     @Override
     protected void onStop() {
-//        controller.hide();
         super.onStop();
     }
     @Override
@@ -327,47 +286,6 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
 //        controller.show(0);
     }
 
-    private void onRowClick(int position) {
-        Intent intent;
-        switch (position){
-            case 0:
-                intent = new Intent(this, MainActivity.class);
-
-                startActivity(intent);
-                break;
-            case 1:
-                intent = new Intent(this, VerbsActivity.class);
-                startActivity(intent);
-                break;
-            case 2:
-                mSlidingPanel.closePane();
-
-                return;
-            case 3:
-                intent = new Intent(this, VideoActivity.class);
-
-                startActivity(intent);
-                break;
-            case 4:
-                intent = new Intent(this, MemoActivity.class);
-
-                startActivity(intent);
-                break;
-            case 5:
-                intent = new Intent(this, FactsActivity.class);
-
-                startActivity(intent);
-                break;
-            case 6:
-                intent = new Intent(this, AboutActivity.class);
-
-                startActivity(intent);
-                break;
-            default:
-                break;
-        }
-        finish();
-    }
 
     @Override
     public void start() {
@@ -436,23 +354,6 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
         return 0;
     }
 
-    private void setController(){
-//        controller = new MusicController(this);
-//        controller.setPrevNextListeners(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                playNext();
-//            }
-//        }, new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                playPrev();
-//            }
-//        });
-//        controller.setMediaPlayer(this);
-//        controller.setAnchorView(findViewById(R.id.recyclerView));
-//        controller.setEnabled(true);
-    }
 
     //play next
     private void playNext(){
@@ -475,15 +376,11 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
     }
 
     public class DownloadFile extends AsyncTask<EnglishAudioItem, Void, String> {
-
-
-
         @Override
         protected String doInBackground(EnglishAudioItem... params) {
             new File(getFilesDir()+"/songs/").mkdir();
             new File(getFilesDir()+"/images/").mkdir();
             File file = new File(getFilesDir()+"/songs/"+params[0].getTitle()+"."+params[0].getOriginalFormat());
-            Log.d("dree", Arrays.toString(getFilesDir().listFiles()));
 
             if(!file.exists()) {
                 downloadFromUrl(params[0].getDownloadUrl(), "/songs/", params[0].getTitle() + "." + params[0].getOriginalFormat());
@@ -500,7 +397,6 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
         protected void onPostExecute(String title) {
             Toast.makeText(AudioActivity.this, title, Toast.LENGTH_SHORT).show();
             AudioActivity.this.findViewById(R.id.progressAudio).setVisibility(View.INVISIBLE);
-
         }
     }
 
@@ -509,8 +405,6 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
         @Override
         protected List<EnglishAudioItem> doInBackground(Void... params) {
             File file = new File(getFilesDir()+"/songs/");
-            Log.d("dree", Arrays.toString(file.listFiles()));
-//            file.{"3gp", "mp4", "m4a", "mp3", "wav"};
             File [] files = file.listFiles();
             List<EnglishAudioItem> items = new ArrayList<>();
             if(files == null){
@@ -518,13 +412,8 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
             }
             for(File f:files){
                 String filepath = f.getPath();
-                Log.d("dree", f.getPath());
-                Log.d("dree", f.getName());
                 String title = filepath.substring(filepath.lastIndexOf("/") + 1, filepath.lastIndexOf("."));
-                Log.d("dreeTitle", title);
-
                 String picturePath = getPicture(title);
-
                 items.add(new EnglishAudioItem(filepath, picturePath, title));
             }
             return items;
@@ -532,18 +421,15 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
 
         private String getPicture(String mark) {
             File file = new File(getFilesDir()+"/images/");
-            Log.d("dree", Arrays.toString(file.listFiles()));
-
             File [] files = file.listFiles();
             for(File f:files){{
                 String path = f.getPath();
                 if(path.substring(path.lastIndexOf("/")+1, path.lastIndexOf(".")).equals(mark)){
-                    return f.getPath();
+                        return f.getPath();
+                    }
                 }
             }
-            }
             return null;
-
         }
 
         @Override
@@ -580,35 +466,16 @@ public class AudioActivity extends AppCompatActivity implements MediaController.
 
                 Log.d("dree", ""+connection.getHeaderFields());
             }
-            Log.d("dree", "" + getFilesDir() + folder + fileName);
-            // this will be useful to display download percentage
-            // might be -1: server did not report the length
-//            int fileLength = connection.getContentLength();
-
-            // download the file
             input = connection.getInputStream();
             output = new FileOutputStream(getFilesDir()+folder+fileName);
 
             byte data[] = new byte[4096];
-            long total = 0;
             int count;
             while ((count = input.read(data)) != -1) {
-//                // allow canceling with back button
-//                if (isCancelled()) {
-//                    input.close();
-//                    return null;
-//                }
-                total += count;
-                Log.d("dree", ""+total);
-
-                // publishing the progress....
-//                if (fileLength > 0) // only if total length is known
-//                    publishProgress((int) (total * 100 / fileLength));
                 output.write(data, 0, count);
             }
         } catch (Exception e) {
-                            Log.d("dree", ""+e.toString());
-
+            Log.d("dree", ""+e.toString());
         } finally {
             try {
                 if (output != null)

@@ -6,6 +6,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/burger"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/menu_icon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
         <TextView
             android:id="@+id/grammar"
             android:layout_width="@dimen/toolbarMainGramWidth"

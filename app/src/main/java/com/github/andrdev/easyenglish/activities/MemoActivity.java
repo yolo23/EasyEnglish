@@ -24,11 +24,8 @@ import java.util.List;
 /**
  * Created by taiyokaze on 7/17/15.
  */
-public class MemoActivity extends AppCompatActivity {
+public class MemoActivity extends BaseSlidingActivity {
 
-
-    SlidingPaneLayout mSlidingPanel;
-    RecyclerView mMenuList;
     WebView webView;
 
     TextView verbsTv;
@@ -36,54 +33,23 @@ public class MemoActivity extends AppCompatActivity {
     TextView phrasesTv;
     TextView slangTv;
 
-    private Toolbar toolbar;
-    static List<DrawerLine> dividerLines = new ArrayList<>();
-    static{
-        dividerLines.add(new DrawerLine(R.mipmap.gramm, "Грамматика"));
-        dividerLines.add(new DrawerLine(R.mipmap.irregular, "Неправильные глаголы"));
-        dividerLines.add(new DrawerLine(R.mipmap.audio, "Аудио-курс"));
-        dividerLines.add(new DrawerLine(R.mipmap.video, "Видео-курс"));
-        dividerLines.add(new DrawerLine(R.mipmap.memo, "Памятки"));
-        dividerLines.add(new DrawerLine(R.mipmap.facts, "А вы знали?"));
-        dividerLines.add(new DrawerLine(R.mipmap.about, "О приложении"));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memo);
-        mSlidingPanel = (SlidingPaneLayout) findViewById(R.id.SlidingPanel);
-        mMenuList = (RecyclerView) findViewById(R.id.menuList);
-        toolbar = (Toolbar) findViewById(R.id.eeToolbar);
-        toolbar.setNavigationIcon(R.mipmap.menu_icon);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mSlidingPanel.isOpen()){
-                    mSlidingPanel.closePane();
-                } else {
-                    mSlidingPanel.openPane();
-                }
-            }
-        });
-        mMenuList.setLayoutManager(new LinearLayoutManager(this));
+        initWebView();
+        initToolbarButtons();
+        setVerbs();
+    }
 
-        mMenuList.setAdapter(new DrawerAdapter(this, dividerLines));
-        mMenuList.getAdapter().notifyDataSetChanged();
-        mMenuList.addOnItemTouchListener(new RecyclerItemClickListener(this,
-                new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        onRowClick(position);
-                    }
-                }));
+    private void initWebView() {
         webView = (WebView)findViewById(R.id.webView);
         WebSettings settings = webView.getSettings();
         settings.setDefaultTextEncodingName("utf-8");
+    }
 
-        mSlidingPanel.setParallaxDistance(200);
-
-        verbsTv = (TextView)toolbar.findViewById(R.id.verbsTv);
+    private void initToolbarButtons() {
+        verbsTv = (TextView)getToolbar().findViewById(R.id.verbsTv);
         verbsTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,8 +57,7 @@ public class MemoActivity extends AppCompatActivity {
             }
         });
 
-
-        idiomsTv = (TextView)toolbar.findViewById(R.id.idiomsTv);
+        idiomsTv = (TextView)getToolbar().findViewById(R.id.idiomsTv);
         idiomsTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +65,7 @@ public class MemoActivity extends AppCompatActivity {
             }
         });
 
-        phrasesTv = (TextView)toolbar.findViewById(R.id.phrasesTv);
+        phrasesTv = (TextView)getToolbar().findViewById(R.id.phrasesTv);
         phrasesTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,17 +73,23 @@ public class MemoActivity extends AppCompatActivity {
             }
         });
 
-        slangTv = (TextView)toolbar.findViewById(R.id.slangTv);
+        slangTv = (TextView)getToolbar().findViewById(R.id.slangTv);
         slangTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 setSlang();
             }
         });
-        setVerbs();
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayShowHomeEnabled(true);
-//        getSupportActionBar().setHomeButtonEnabled(true);
+    }
+
+    @Override
+    int getMainLayout() {
+        return R.layout.activity_memo;
+    }
+
+    @Override
+    int getCurrentActivityPostion() {
+        return 4;
     }
 
     void setVerbs() {
@@ -133,8 +104,8 @@ public class MemoActivity extends AppCompatActivity {
 
         verbsTv.setBackgroundDrawable(getResources().getDrawable(R.drawable.top_left_sel_but));
         verbsTv.setTextColor(0xFF428093);
-        webView.loadUrl("file:///android_asset/verbs.html");
 
+        webView.loadUrl("file:///android_asset/verbs.html");
     }
 
     void setIdioms() {
@@ -149,9 +120,10 @@ public class MemoActivity extends AppCompatActivity {
 
         idiomsTv.setBackgroundColor(Color.WHITE);
         idiomsTv.setTextColor(0xFF428093);
-        webView.loadUrl("file:///android_asset/verb.html");
 
+        webView.loadUrl("file:///android_asset/verb.html");
     }
+
     void setPhrases() {
         verbsTv.setBackgroundDrawable(getResources().getDrawable(R.drawable.top_left_but));
         verbsTv.setTextColor(Color.WHITE);
@@ -164,8 +136,8 @@ public class MemoActivity extends AppCompatActivity {
 
         phrasesTv.setBackgroundColor(Color.WHITE);
         phrasesTv.setTextColor(0xFF428093);
-        webView.loadUrl("file:///android_asset/phrases.rtf");
 
+        webView.loadUrl("file:///android_asset/phrases.rtf");
     }
 
     void setSlang() {
@@ -180,48 +152,7 @@ public class MemoActivity extends AppCompatActivity {
 
         slangTv.setBackgroundDrawable(getResources().getDrawable(R.drawable.top_right_sel_but));
         slangTv.setTextColor(0xFF428093);
+
         webView.loadUrl("file:///android_asset/verb.html");
-    }
-
-    private void onRowClick(int position) {
-        Intent intent;
-        switch (position){
-            case 0:
-                intent = new Intent(this, MainActivity.class);
-
-                startActivity(intent);
-                break;
-            case 1:
-                intent = new Intent(this, VerbsActivity.class);
-                startActivity(intent);
-                break;
-            case 2:
-                intent = new Intent(this, AudioActivity.class);
-
-                startActivity(intent);
-                break;
-            case 3:
-                intent = new Intent(this, VideoActivity.class);
-
-                startActivity(intent);
-                break;
-            case 4:
-                mSlidingPanel.closePane();
-
-                return;
-            case 5:
-                intent = new Intent(this, FactsActivity.class);
-
-                startActivity(intent);
-                break;
-            case 6:
-                intent = new Intent(this, AboutActivity.class);
-
-                startActivity(intent);
-                break;
-            default:
-                break;
-        }
-        finish();
     }
 }
