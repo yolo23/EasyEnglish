@@ -1,0 +1,1431 @@
+{\rtf1\ansi\ansicpg1251\cocoartf1348\cocoasubrtf130
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green116\blue0;\red170\green13\blue145;\red196\green26\blue22;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab529
+\pard\tx529\pardeftab529\pardirnatural
+
+\f0\fs22 \cf2 \CocoaLigature0 //\
+//  IrregularWords.swift\
+//  English\
+//\
+//  Created by Vlad Kleber on 07.07.15.\
+//  Copyright (c) 2015 Vlad Kleber. All rights reserved.\
+//\
+\cf0 \
+\cf3 import\cf0  Foundation\
+\
+\cf2 //type 1\
+\cf0 \
+\cf3 let\cf0  first_header = \cf4 "\uc0\u1042 \u1089 \u1077  \u1090 \u1088 \u1080  \u1092 \u1086 \u1088 \u1084 \u1099  \u1086 \u1076 \u1080 \u1085 \u1072 \u1082 \u1086 \u1074 \u1099 "\cf0 \
+\
+\cf3 let\cf0  infinitive_type_one = [\cf4 "cost"\cf0 , \cf4 "cut"\cf0 , \cf4 "hit"\cf0 , \cf4 "let"\cf0 , \cf4 "put"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_one = [\cf4 "cost"\cf0 , \cf4 "cut"\cf0 , \cf4 "hit"\cf0 , \cf4 "let"\cf0 , \cf4 "put"\cf0 ]\
+\cf3 let\cf0  past_participle_type_one = [\cf4 "cost"\cf0 , \cf4 "cut"\cf0 , \cf4 "hit"\cf0 , \cf4 "let"\cf0 , \cf4 "put"\cf0 ]\
+\cf3 let\cf0  translate_type_one = [\cf4 "\uc0\u1089 \u1090 \u1086 \u1080 \u1090 \u1100 , \u1086 \u1073 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 \u1089 \u1103  (\u1074  \u1082 \u1072 \u1082 \u1091 \u1102 -\u1083 \u1080 \u1073 \u1086  \u1089 \u1091 \u1084 \u1084 \u1091 )"\cf0 , \cf4 "\uc0\u1088 \u1077 \u1079 \u1072 \u1090 \u1100 , \u1088 \u1072 \u1079 \u1088 \u1077 \u1079 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1091 \u1076 \u1072 \u1088 \u1103 \u1090 \u1100 , \u1087 \u1086 \u1088 \u1072 \u1078 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1086 \u1079 \u1074 \u1086 \u1083 \u1103 \u1090 \u1100 , \u1087 \u1088 \u1077 \u1076 \u1087 \u1086 \u1083 \u1072 \u1075 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1082 \u1083 \u1072 \u1089 \u1090 \u1100 , \u1089 \u1090 \u1072 \u1074 \u1080 \u1090 \u1100 , \u1088 \u1072 \u1079 \u1084 \u1077 \u1097 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type 2\
+\cf0 \
+\cf3 let\cf0  second_header = \cf4 "\uc0\u1042 \u1090 \u1086 \u1088 \u1072 \u1103  \u1080  \u1090 \u1088 \u1077 \u1090 \u1100 \u1103  \u1092 \u1086 \u1088 \u1084 \u1072  \u1086 \u1076 \u1080 \u1085 \u1072 \u1082 \u1086 \u1074 \u1099  \u1080  \u1089 \u1086 \u1076 \u1077 \u1088 \u1078 \u1072 \u1090  \u1082 \u1088 \u1072 \u1090 \u1082 \u1080 \u1081  \u1075 \u1083 \u1072 \u1089 \u1085 \u1099 \u1081  \u1079 \u1074 \u1091 \u1082  [e]"\cf0 \
+\
+\cf3 let\cf0  infinitive_type_two = [\cf4 "feel"\cf0 , \cf4 "keep"\cf0 , \cf4 "lead"\cf0 , \cf4 "leave"\cf0 , \cf4 "mean"\cf0 , \cf4 "meet"\cf0 , \cf4 "read"\cf0 , \cf4 "sleep"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_two = [\cf4 "felt"\cf0 ,\cf4 "kept"\cf0 , \cf4 "led"\cf0 , \cf4 "left"\cf0 , \cf4 "meant"\cf0 , \cf4 "met"\cf0 , \cf4 "read"\cf0 , \cf4 "slept"\cf0 ]\
+\cf3 let\cf0  past_participle_type_two = [\cf4 "felt"\cf0 ,\cf4 "kept"\cf0 , \cf4 "led"\cf0 , \cf4 "left"\cf0 , \cf4 "meant"\cf0 , \cf4 "met"\cf0 , \cf4 "read"\cf0 , \cf4 "slept"\cf0 ]\
+\cf3 let\cf0  translate_type_two = [\cf4 "\uc0\u1095 \u1091 \u1074 \u1089 \u1090 \u1074 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1076 \u1077 \u1088 \u1078 \u1072 \u1090 \u1100 , \u1093 \u1088 \u1072 \u1085 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1074 \u1077 \u1089 \u1090 \u1080 , \u1088 \u1091 \u1082 \u1086 \u1074 \u1086 \u1076 \u1080 \u1090 \u1100 , \u1091 \u1087 \u1088 \u1072 \u1074 \u1083 \u1103 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1086 \u1082 \u1080 \u1076 \u1072 \u1090 \u1100 , \u1086 \u1089 \u1090 \u1072 \u1074 \u1083 \u1103 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1079 \u1085 \u1072 \u1095 \u1080 \u1090 \u1100 , \u1080 \u1084 \u1077 \u1090 \u1100  \u1074 \u1074 \u1080 \u1076 \u1091 "\cf0 , \cf4 "\uc0\u1074 \u1089 \u1090 \u1088 \u1077 \u1095 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1095 \u1080 \u1090 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1087 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type 3\
+\cf0 \
+\cf3 let\cf0  third_header = \cf4 "\uc0\u1042 \u1090 \u1086 \u1088 \u1072 \u1103  \u1080  \u1090 \u1088 \u1077 \u1090 \u1100 \u1103  \u1092 \u1086 \u1088 \u1084 \u1099  \u1086 \u1076 \u1080 \u1085 \u1072 \u1082 \u1086 \u1074 \u1099  \u1080  \u1079 \u1072 \u1082 \u1072 \u1085 \u1095 \u1080 \u1074 \u1072 \u1102 \u1090 \u1089 \u1103  \u1085 \u1072  \'96ght"\cf0 \
+\
+\cf3 let\cf0  infinitive_type_three = [\cf4 "bring"\cf0 , \cf4 "buy"\cf0 , \cf4 "catch"\cf0 , \cf4 "teach"\cf0 , \cf4 "think"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_three = [\cf4 "brought"\cf0 , \cf4 "bought"\cf0 , \cf4 "caught"\cf0 , \cf4 "taught"\cf0 , \cf4 "thought"\cf0 ]\
+\cf3 let\cf0  past_participle_type_three = [\cf4 "brought"\cf0 , \cf4 "bought"\cf0 , \cf4 "caught"\cf0 , \cf4 "taught"\cf0 , \cf4 "thought"\cf0 ]\
+\cf3 let\cf0  translate_type_three = [\cf4 "\uc0\u1087 \u1088 \u1080 \u1085 \u1086 \u1089 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1086 \u1082 \u1091 \u1087 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1083 \u1086 \u1074 \u1080 \u1090 \u1100 , \u1093 \u1074 \u1072 \u1090 \u1072 \u1090 \u1100 , \u1091 \u1089 \u1087 \u1077 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1091 \u1095 \u1080 \u1090 \u1100 , \u1086 \u1073 \u1091 \u1095 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1076 \u1091 \u1084 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type 4\
+\cf0 \
+\cf3 let\cf0  fourth_header = \cf4 "\uc0\u1042 \u1090 \u1086 \u1088 \u1072 \u1103  \u1080  \u1090 \u1088 \u1077 \u1090 \u1100 \u1103  \u1092 \u1086 \u1088 \u1084 \u1099  \u1086 \u1076 \u1080 \u1085 \u1072 \u1082 \u1086 \u1074 \u1099 , \u1087 \u1077 \u1088 \u1077 \u1093 \u1086 \u1076  -d \u1074  -t"\cf0 \
+\
+\cf3 let\cf0  infinitive_type_four = [\cf4 "build"\cf0 , \cf4 "send"\cf0 , \cf4 "spend"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_four = [\cf4 "built"\cf0 , \cf4 "sent"\cf0 , \cf4 "spent"\cf0 ]\
+\cf3 let\cf0  past_participle_type_four = [\cf4 "built"\cf0 , \cf4 "sent"\cf0 , \cf4 "spent"\cf0 ]\
+\cf3 let\cf0  translate_type_four = [\cf4 "\uc0\u1089 \u1090 \u1088 \u1086 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1086 \u1089 \u1099 \u1083 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1090 \u1088 \u1072 \u1090 \u1080 \u1090 \u1100 , \u1088 \u1072 \u1089 \u1093 \u1086 \u1076 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type 5\
+\cf0 \
+\cf3 let\cf0  fifth_header = \cf4 "\uc0\u1042 \u1090 \u1086 \u1088 \u1072 \u1103  \u1080  \u1090 \u1088 \u1077 \u1090 \u1100 \u1103  \u1092 \u1086 \u1088 \u1084 \u1099  \u1086 \u1076 \u1080 \u1085 \u1072 \u1082 \u1086 \u1074 \u1099 "\cf0 \
+\
+\cf3 let\cf0  infinitive_type_five = [\cf4 "burn"\cf0 , \cf4 "find"\cf0 , \cf4 "have, has"\cf0 , \cf4 "hear"\cf0 , \cf4 "hold"\cf0 , \cf4 "learn"\cf0 , \cf4 "lose"\cf0 , \cf4 "make"\cf0 , \cf4 "pay"\cf0 , \cf4 "say"\cf0 , \cf4 "sell"\cf0 , \cf4 "sit"\cf0 , \cf4 "stand"\cf0 , \cf4 "tell"\cf0 , \cf4 "understand"\cf0 ,\cf4 "win"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_five = [\cf4 "burnt"\cf0 , \cf4 "found"\cf0 , \cf4 "had"\cf0 , \cf4 "heard"\cf0 , \cf4 "held"\cf0 , \cf4 "learnt"\cf0 , \cf4 "lost"\cf0 , \cf4 "made"\cf0 , \cf4 "paid"\cf0 , \cf4 "said"\cf0 , \cf4 "sold"\cf0 , \cf4 "sat"\cf0 , \cf4 "stood"\cf0 , \cf4 "told"\cf0 , \cf4 "understood"\cf0 ,\cf4 "won"\cf0 ]\
+\cf3 let\cf0  past_participle_type_five = [\cf4 "burnt"\cf0 , \cf4 "found"\cf0 , \cf4 "had"\cf0 , \cf4 "heard"\cf0 , \cf4 "held"\cf0 , \cf4 "learnt"\cf0 , \cf4 "lost"\cf0 , \cf4 "made"\cf0 , \cf4 "paid"\cf0 , \cf4 "said"\cf0 , \cf4 "sold"\cf0 , \cf4 "sat"\cf0 , \cf4 "stood"\cf0 , \cf4 "told"\cf0 , \cf4 "understood"\cf0 ,\cf4 "won"\cf0 ]\
+\cf3 let\cf0  translate_type_five = [\cf4 "\uc0\u1078 \u1077 \u1095 \u1100 , \u1075 \u1086 \u1088 \u1077 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1085 \u1072 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1080 \u1084 \u1077 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1089 \u1083 \u1099 \u1096 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1076 \u1077 \u1088 \u1078 \u1072 \u1090 \u1100 , \u1091 \u1076 \u1077 \u1088 \u1078 \u1080 \u1074 \u1072 \u1090 \u1100 , \u1092 \u1080 \u1082 \u1089 \u1080 \u1088 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1091 \u1095 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1090 \u1077 \u1088 \u1103 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1076 \u1077 \u1083 \u1072 \u1090 \u1100 , \u1087 \u1088 \u1086 \u1080 \u1079 \u1074 \u1086 \u1076 \u1080 \u1090 \u1100 , \u1089 \u1086 \u1079 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1083 \u1072 \u1090 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1089 \u1082 \u1072 \u1079 \u1072 \u1090 \u1100 , \u1079 \u1072 \u1103 \u1074 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1088 \u1086 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1089 \u1080 \u1076 \u1077 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1089 \u1090 \u1086 \u1103 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1088 \u1072 \u1089 \u1089 \u1082 \u1072 \u1079 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1086 \u1085 \u1080 \u1084 \u1072 \u1090 \u1100 , \u1087 \u1086 \u1089 \u1090 \u1080 \u1075 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1086 \u1073 \u1077 \u1076 \u1080 \u1090 \u1100 , \u1074 \u1099 \u1080 \u1075 \u1088 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type 6\
+\cf0 \
+\cf3 let\cf0  sixth_header = \cf4 "\uc0\u1042 \u1089 \u1077  \u1090 \u1088 \u1080  \u1092 \u1086 \u1088 \u1084 \u1099  \u1088 \u1072 \u1079 \u1083 \u1080 \u1095 \u1085 \u1099 "\cf0 \
+\
+\cf3 let\cf0  infinitive_type_six = [\cf4 "be"\cf0 , \cf4 "do"\cf0 , \cf4 "go"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_six = [\cf4 "was, were"\cf0 , \cf4 "did"\cf0 , \cf4 "went"\cf0 ]\
+\cf3 let\cf0  past_participle_type_six = [\cf4 "been"\cf0 , \cf4 "done"\cf0 , \cf4 "gone"\cf0 ]\
+\cf3 let\cf0  translate_type_six = [\cf4 "\uc0\u1073 \u1099 \u1090 \u1100 , \u1085 \u1072 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 \u1089 \u1103 "\cf0 , \cf4 "\uc0\u1076 \u1077 \u1083 \u1072 \u1090 \u1100 , \u1074 \u1099 \u1087 \u1086 \u1083 \u1085 \u1103 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1080 \u1076 \u1090 \u1080 , \u1077 \u1093 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type 7\
+\cf0 \
+\cf3 let\cf0  seventh_header = \cf4 "\uc0\u1042 \u1089 \u1077  \u1090 \u1088 \u1080  \u1092 \u1086 \u1088 \u1084 \u1099  \u1088 \u1072 \u1079 \u1083 \u1080 \u1095 \u1085 \u1099 , \u1080 \u1079 \u1084 \u1077 \u1085 \u1077 \u1085 \u1080 \u1077  \u1082 \u1086 \u1088 \u1085 \u1077 \u1074 \u1086 \u1081  \u1075 \u1083 \u1072 \u1089 \u1085 \u1086 \u1081 "\cf0 \
+\
+\cf3 let\cf0  infinitive_type_seven = [\cf4 "become"\cf0 , \cf4 "to begin"\cf0 , \cf4 "come"\cf0 , \cf4 "drink"\cf0 , \cf4 "ring"\cf0 , \cf4 "run"\cf0 , \cf4 "to swim"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_seven = [\cf4 "became"\cf0 , \cf4 "began"\cf0 , \cf4 "came"\cf0 , \cf4 "drank"\cf0 , \cf4 "rang"\cf0 , \cf4 "ran"\cf0 , \cf4 "swam"\cf0 ]\
+\cf3 let\cf0  past_participle_type_seven = [\cf4 "become"\cf0 , \cf4 "begun"\cf0 , \cf4 "come"\cf0 , \cf4 "drunk"\cf0 , \cf4 "rung"\cf0 , \cf4 "run"\cf0 , \cf4 "swum"\cf0 ]\
+\cf3 let\cf0  translate_type_seven = [\cf4 "\uc0\u1089 \u1090 \u1072 \u1085 \u1086 \u1074 \u1080 \u1090 \u1100 \u1089 \u1103 "\cf0 , \cf4 "\uc0\u1085 \u1072 \u1095 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1088 \u1080 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1079 \u1074 \u1086 \u1085 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1073 \u1077 \u1075 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1083 \u1099 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type 8\
+\cf0 \
+\cf3 let\cf0  eighth_header = \cf4 "\uc0\u1042 \u1089 \u1077  \u1090 \u1088 \u1080  \u1092 \u1086 \u1088 \u1084 \u1099  \u1088 \u1072 \u1079 \u1083 \u1080 \u1095 \u1085 \u1099 , \u1080 \u1079 \u1084 \u1077 \u1085 \u1077 \u1085 \u1080 \u1077  \u1082 \u1086 \u1088 \u1085 \u1077 \u1074 \u1086 \u1081  \u1075 \u1083 \u1072 \u1089 \u1085 \u1086 \u1081  \u1080  \u1076 \u1086 \u1073 \u1072 \u1074 \u1083 \u1077 \u1085 \u1080 \u1077  -en \u1074  III-\u1081  \u1092 \u1086 \u1088 \u1084 \u1077 "\cf0 \
+\
+\cf3 let\cf0  infinitive_type_eight = [\cf4 "break"\cf0 , \cf4 "drive"\cf0 , \cf4 "eat"\cf0 , \cf4 "fall"\cf0 ,\cf4 "forget"\cf0 , \cf4 "freeze"\cf0 , \cf4 "get"\cf0 , \cf4 "give"\cf0 , \cf4 "speak"\cf0 , \cf4 "take"\cf0 , \cf4 "write"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_eight = [\cf4 "broke"\cf0 , \cf4 "drove"\cf0 , \cf4 "ate"\cf0 , \cf4 "fell"\cf0 , \cf4 "forgot"\cf0 ,\cf4 "froze"\cf0 , \cf4 "got"\cf0 , \cf4 "gave"\cf0 , \cf4 "spoke"\cf0 , \cf4 "took"\cf0 , \cf4 "wrote"\cf0 ]\
+\cf3 let\cf0  past_participle_type_eight = [\cf4 "broken"\cf0 , \cf4 "driven"\cf0 , \cf4 "eaten"\cf0 , \cf4 "fallen"\cf0 , \cf4 "forgotten"\cf0 ,\cf4 "frozen"\cf0 , \cf4 "gotten"\cf0 , \cf4 "given"\cf0 , \cf4 "spoken"\cf0 , \cf4 "taken"\cf0 , \cf4 "written"\cf0 ]\
+\cf3 let\cf0  translate_type_eight = [\cf4 "\uc0\u1083 \u1086 \u1084 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1091 \u1087 \u1088 \u1072 \u1074 \u1083 \u1103 \u1090 \u1100  (\u1072 \u1074 \u1090 \u1086 )"\cf0 , \cf4 "\uc0\u1077 \u1089 \u1090 \u1100 , \u1082 \u1091 \u1096 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1072 \u1076 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1079 \u1072 \u1073 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\cf4 "\uc0\u1079 \u1072 \u1084 \u1077 \u1088 \u1079 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1086 \u1083 \u1091 \u1095 \u1072 \u1090 \u1100 , \u1076 \u1086 \u1089 \u1090 \u1080 \u1075 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1076 \u1072 \u1074 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1075 \u1086 \u1074 \u1086 \u1088 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1073 \u1088 \u1072 \u1090 \u1100 , \u1074 \u1079 \u1103 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1080 \u1089 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type 9\
+\cf0 \
+\cf3 let\cf0  ninth_header = \cf4 "\uc0\u1042 \u1089 \u1077  \u1090 \u1088 \u1080  \u1092 \u1086 \u1088 \u1084 \u1099  \u1088 \u1072 \u1079 \u1083 \u1080 \u1095 \u1085 \u1099 , \u1080 \u1079 \u1084 \u1077 \u1085 \u1077 \u1085 \u1080 \u1077  \u1082 \u1086 \u1088 \u1085 \u1077 \u1074 \u1086 \u1081  \u1075 \u1083 \u1072 \u1089 \u1085 \u1086 \u1081  \u1080  \u1076 \u1086 \u1073 \u1072 \u1074 \u1083 \u1077 \u1085 \u1080 \u1077  -n \u1074  III-\u1081  \u1092 \u1086 \u1088 \u1084 \u1077 "\cf0 \
+\
+\cf3 let\cf0  infinitive_type_nine = [\cf4 "draw"\cf0 , \cf4 "fly"\cf0 , \cf4 "know"\cf0 , \cf4 "see"\cf0 , \cf4 "show"\cf0 , \cf4 "throw"\cf0 , \cf4 "wear"\cf0 ]\
+\cf3 let\cf0  past_indefinite_type_nine = [\cf4 "drew"\cf0 , \cf4 "flew"\cf0 , \cf4 "knew"\cf0 , \cf4 "saw"\cf0 , \cf4 "showed"\cf0 , \cf4 "threw"\cf0 , \cf4 "wore"\cf0 ]\
+\cf3 let\cf0  past_participle_type_nine = [\cf4 "drawn"\cf0 , \cf4 "flown"\cf0 , \cf4 "known"\cf0 , \cf4 "seen"\cf0 , \cf4 "shown"\cf0 , \cf4 "thrown"\cf0 , \cf4 "worn"\cf0 ]\
+\cf3 let\cf0  translate_type_nine = [\cf4 "\uc0\u1088 \u1080 \u1089 \u1086 \u1074 \u1072 \u1090 \u1100 , \u1095 \u1077 \u1088 \u1090 \u1080 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1083 \u1077 \u1090 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1079 \u1085 \u1072 \u1090 \u1100 , \u1080 \u1084 \u1077 \u1090 \u1100  \u1087 \u1088 \u1077 \u1076 \u1089 \u1090 \u1072 \u1074 \u1083 \u1077 \u1085 \u1080 \u1077  (\u1086  \u1095 \u1077 \u1084 -\u1083 \u1080 \u1073 \u1086 )"\cf0 , \cf4 "\uc0\u1074 \u1080 \u1076 \u1077 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1087 \u1086 \u1082 \u1072 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1082 \u1080 \u1076 \u1072 \u1090 \u1100 , \u1073 \u1088 \u1086 \u1089 \u1072 \u1090 \u1100 "\cf0 , \cf4 "\uc0\u1085 \u1086 \u1089 \u1080 \u1090 \u1100  (\u1086 \u1076 \u1077 \u1078 \u1076 \u1091 ), \u1089 \u1085 \u1072 \u1096 \u1080 \u1074 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ]\
+\
+\cf2 //full data\
+\cf0 \
+\cf2 //type A\
+\cf0 \
+\cf3 let\cf0  a_header = \cf4 "A"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_a = [\cf4 "abide"\cf0 , \cf4 "arise"\cf0 , \cf4 "awake"\cf0 ]\
+\cf3 let\cf0  full_past_indefinite_type_a = [\cf4 "abode, abided"\cf0 , \cf4 "arose"\cf0 , \cf4 "awoke"\cf0 ]\
+\cf3 let\cf0  full_participle_type_a = [\cf4 "abode, abided"\cf0 , \cf4 "arisen"\cf0 , \cf4 "awaked, awoke"\cf0 ]\
+\cf3 let\cf0  translate_type_a = [\cf4 "\uc0\u1087 \u1088 \u1077 \u1073 \u1099 \u1074 \u1072 \u1090 \u1100 , \u1076 \u1077 \u1088 \u1078 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\cf4 "\uc0\u1087 \u1086 \u1076 \u1085 \u1103 \u1090 \u1100 \u1089 \u1103 , \u1074 \u1086 \u1079 \u1085 \u1080 \u1082 \u1085 \u1091 \u1090 \u1100 "\cf0 ,\cf4 "\uc0\u1073 \u1091 \u1076 \u1080 \u1090 \u1100 , \u1087 \u1088 \u1086 \u1089 \u1085 \u1091 \u1090 \u1100 \u1089 \u1103 "\cf0 ]\
+\
+\cf2 //type B\
+\cf0 \
+\cf3 let\cf0  b_header = \cf4 "B"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_b = [\cf4 "backbite"\cf0 ,\
+    \cf4 "backslide"\cf0 ,\
+    \cf4 "be"\cf0 ,\
+    \cf4 "bear"\cf0 ,\
+    \cf4 "beat"\cf0 ,\
+    \cf4 "become"\cf0 ,\
+    \cf4 "befall"\cf0 ,\
+    \cf4 "beget"\cf0 ,\
+    \cf4 "begin"\cf0 ,\
+    \cf4 "begird"\cf0 ,\
+    \cf4 "behold"\cf0 ,\
+    \cf4 "bend"\cf0 ,\
+    \cf4 "bereave"\cf0 ,\
+    \cf4 "beseech"\cf0 ,\
+    \cf4 "beset"\cf0 ,\
+    \cf4 "bespeak"\cf0 ,\
+    \cf4 "bespit"\cf0 ,\
+    \cf4 "bestride"\cf0 ,\
+    \cf4 "bet"\cf0 ,\
+    \cf4 "betake"\cf0 ,\
+    \cf4 "bid"\cf0 ,\
+    \cf4 "bind"\cf0 ,\
+    \cf4 "bite"\cf0 ,\
+    \cf4 "bleed"\cf0 ,\
+    \cf4 "bless"\cf0 ,\
+    \cf4 "blow"\cf0 ,\
+    \cf4 "break"\cf0 ,\
+    \cf4 "breed"\cf0 ,\
+    \cf4 "bring"\cf0 ,\
+    \cf4 "broadcast"\cf0 ,\
+    \cf4 "browbeat"\cf0 ,\
+    \cf4 "build"\cf0 ,\
+    \cf4 "burn"\cf0 ,\
+    \cf4 "burst"\cf0 ,\
+    \cf4 "bust"\cf0 ,\
+    \cf4 "buy"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_b = [\cf4 "backbitten"\cf0 ,\
+    \cf4 "backslid"\cf0 ,\
+    \cf4 "was, were"\cf0 ,\
+    \cf4 "bore"\cf0 ,\
+    \cf4 "beat"\cf0 ,\
+    \cf4 "became"\cf0 ,\
+    \cf4 "befell"\cf0 ,\
+    \cf4 "begot, begat"\cf0 ,\
+    \cf4 "began"\cf0 ,\
+    \cf4 "begirt"\cf0 ,\
+    \cf4 "beheld"\cf0 ,\
+    \cf4 "bent"\cf0 ,\
+    \cf4 "bereft, bereaved"\cf0 ,\
+    \cf4 "besought, beseeched"\cf0 ,\
+    \cf4 "beset"\cf0 ,\
+    \cf4 "bespoke"\cf0 ,\
+    \cf4 "bespat"\cf0 ,\
+    \cf4 "bestrode"\cf0 ,\
+    \cf4 "bet, betted"\cf0 ,\
+    \cf4 "betook"\cf0 ,\
+    \cf4 "bad, bade, bid"\cf0 ,\
+    \cf4 "bound"\cf0 ,\
+    \cf4 "bit"\cf0 ,\
+    \cf4 "bled"\cf0 ,\
+    \cf4 "blessed"\cf0 ,\
+    \cf4 "blew"\cf0 ,\
+    \cf4 "broke"\cf0 ,\
+    \cf4 "bred"\cf0 ,\
+    \cf4 "brought"\cf0 ,\
+    \cf4 "broadcast"\cf0 ,\
+    \cf4 "browbeat"\cf0 ,\
+    \cf4 "built"\cf0 ,\
+    \cf4 "burnt, burned"\cf0 ,\
+    \cf4 "burst"\cf0 ,\
+    \cf4 "bust, busted"\cf0 ,\
+    \cf4 "bought"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_b = [\cf4 "backbitten"\cf0 ,\
+    \cf4 "backslid"\cf0 ,\
+    \cf4 "been"\cf0 ,\
+    \cf4 "born, borne"\cf0 ,\
+    \cf4 "beaten"\cf0 ,\
+    \cf4 "become"\cf0 ,\
+    \cf4 "befallen"\cf0 ,\
+    \cf4 "begotten"\cf0 ,\
+    \cf4 "begun"\cf0 ,\
+    \cf4 "begirt"\cf0 ,\
+    \cf4 "beheld"\cf0 ,\
+    \cf4 "bent, bended"\cf0 ,\
+    \cf4 "bereft, bereaved"\cf0 ,\
+    \cf4 "besought, beseeched"\cf0 ,\
+    \cf4 "beset"\cf0 ,\
+    \cf4 "bespoke, bespoken"\cf0 ,\
+    \cf4 "bespat"\cf0 ,\
+    \cf4 "bestridden"\cf0 ,\
+    \cf4 "bet, betted"\cf0 ,\
+    \cf4 "betaken"\cf0 ,\
+    \cf4 "bid, bidden"\cf0 ,\
+    \cf4 "bound"\cf0 ,\
+    \cf4 "bit, bitten"\cf0 ,\
+    \cf4 "bled"\cf0 ,\
+    \cf4 "blessed, blest"\cf0 ,\
+    \cf4 "blown, blowed"\cf0 ,\
+    \cf4 "broken"\cf0 ,\
+    \cf4 "bred"\cf0 ,\
+    \cf4 "brought"\cf0 ,\
+    \cf4 "broadcast"\cf0 ,\
+    \cf4 "browbeaten"\cf0 ,\
+    \cf4 "built"\cf0 ,\
+    \cf4 "burnt, burned"\cf0 ,\
+    \cf4 "burst"\cf0 ,\
+    \cf4 "bust, busted"\cf0 ,\
+    \cf4 "bought"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_b = [\cf4 "\uc0\u1082 \u1083 \u1077 \u1074 \u1077 \u1090 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1090 \u1087 \u1072 \u1076 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1099 \u1090 \u1100 , \u1085 \u1077 \u1089 \u1090 \u1080 , \u1088 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1072 \u1090 \u1100 , \u1089 \u1076 \u1077 \u1083 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1083 \u1091 \u1095 \u1080 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1088 \u1086 \u1078 \u1076 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1072 \u1095 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1087 \u1086 \u1103 \u1089 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1088 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1075 \u1085 \u1091 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1083 \u1080 \u1096 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1084 \u1086 \u1083 \u1103 \u1090 \u1100 , \u1091 \u1087 \u1088 \u1072 \u1096 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1089 \u1072 \u1078 \u1076 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1082 \u1072 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1087 \u1083 \u1077 \u1074 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1072 \u1076 \u1080 \u1090 \u1100 \u1089 \u1103 , \u1089 \u1080 \u1076 \u1077 \u1090 \u1100  \u1074 \u1077 \u1088 \u1093 \u1086 \u1084 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1077 \u1088 \u1078 \u1072 \u1090 \u1100  \u1087 \u1072 \u1088 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1080 \u1085 \u1080 \u1084 \u1072 \u1090 \u1100 \u1089 \u1103 , \u1086 \u1090 \u1087 \u1088 \u1072 \u1074 \u1083 \u1103 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1077 \u1083 \u1077 \u1090 \u1100 , \u1087 \u1088 \u1086 \u1089 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1074 \u1103 \u1079 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1091 \u1089 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1088 \u1086 \u1074 \u1086 \u1090 \u1086 \u1095 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1083 \u1072 \u1075 \u1086 \u1089 \u1083 \u1086 \u1074 \u1083 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1091 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1083 \u1086 \u1084 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1099 \u1088 \u1072 \u1097 \u1080 \u1074 \u1072 \u1090 \u1100 , \u1088 \u1072 \u1079 \u1074 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1080 \u1085 \u1077 \u1089 \u1090 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1077 \u1097 \u1072 \u1090 \u1100  (\u1086  \u1058 \u1042 , \u1088 \u1072 \u1076 \u1080 \u1086 )"\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1087 \u1091 \u1075 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1088 \u1086 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1078 \u1077 \u1095 \u1100 , \u1075 \u1086 \u1088 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1079 \u1088 \u1072 \u1079 \u1080 \u1090 \u1100 \u1089 \u1103 , \u1074 \u1079 \u1086 \u1088 \u1074 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1079 \u1078 \u1072 \u1083 \u1086 \u1074 \u1072 \u1090 \u1100 , \u1091 \u1085 \u1080 \u1095 \u1090 \u1086 \u1078 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1091 \u1087 \u1080 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type C\
+\cf0 \
+\cf3 let\cf0  c_header = \cf4 "C"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_c = [\cf4 "can"\cf0 ,\
+    \cf4 "cast"\cf0 ,\
+    \cf4 "catch"\cf0 ,\
+    \cf4 "chide"\cf0 ,\
+    \cf4 "choose"\cf0 ,\
+    \cf4 "cleave"\cf0 ,\
+    \cf4 "cling"\cf0 ,\
+    \cf4 "come"\cf0 ,\
+    \cf4 "cost"\cf0 ,\
+    \cf4 "countersink"\cf0 ,\
+    \cf4 "creep"\cf0 ,\
+    \cf4 "crow"\cf0 ,\
+    \cf4 "cut"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_c = [\cf4 "could"\cf0 ,\
+    \cf4 "cast"\cf0 ,\
+    \cf4 "caught"\cf0 ,\
+    \cf4 "chid, chided"\cf0 ,\
+    \cf4 "chose"\cf0 ,\
+    \cf4 "clove, cleft, cleaved"\cf0 ,\
+    \cf4 "clung"\cf0 ,\
+    \cf4 "came"\cf0 ,\
+    \cf4 "cost"\cf0 ,\
+    \cf4 "countersank"\cf0 ,\
+    \cf4 "crept"\cf0 ,\
+    \cf4 "crowed, crew"\cf0 ,\
+    \cf4 "cut"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_c = [\cf4 "- / been able"\cf0 ,\
+    \cf4 "cast"\cf0 ,\
+    \cf4 "caught"\cf0 ,\
+    \cf4 "chid, chided, chidden"\cf0 ,\
+    \cf4 "chosen"\cf0 ,\
+    \cf4 "cloven, cleft, cleaved"\cf0 ,\
+    \cf4 "clung"\cf0 ,\
+    \cf4 "come"\cf0 ,\
+    \cf4 "cost"\cf0 ,\
+    \cf4 "countersunk"\cf0 ,\
+    \cf4 "crept"\cf0 ,\
+    \cf4 "crowed"\cf0 ,\
+    \cf4 "cut"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_c = [\cf4 "\uc0\u1084 \u1086 \u1095 \u1100 , \u1091 \u1084 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1080 \u1085 \u1091 \u1090 \u1100 , \u1083 \u1080 \u1090 \u1100  \u1084 \u1077 \u1090 \u1072 \u1083 \u1083 "\cf0 ,\
+    \cf4 "\uc0\u1083 \u1086 \u1074 \u1080 \u1090 \u1100 , \u1087 \u1086 \u1081 \u1084 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1088 \u1072 \u1085 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1099 \u1073 \u1088 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1089 \u1089 \u1077 \u1095 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1094 \u1077 \u1087 \u1083 \u1103 \u1090 \u1100 \u1089 \u1103 , \u1083 \u1100 \u1085 \u1091 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1080 \u1081 \u1090 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1086 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1077 \u1085 \u1082 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1083 \u1079 \u1090 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1090 \u1100  (\u1086  \u1087 \u1077 \u1090 \u1091 \u1093 \u1077 )"\cf0 ,\
+    \cf4 "\uc0\u1088 \u1077 \u1079 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type D\
+\cf0 \
+\cf3 let\cf0  d_header = \cf4 "D"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_d = [\cf4 "dare"\cf0 ,\
+    \cf4 "deal"\cf0 ,\
+    \cf4 "dig"\cf0 ,\
+    \cf4 "dive"\cf0 ,\
+    \cf4 "do"\cf0 ,\
+    \cf4 "draw"\cf0 ,\
+    \cf4 "dream"\cf0 ,\
+    \cf4 "drink"\cf0 ,\
+    \cf4 "drive"\cf0 ,\
+    \cf4 "dwell"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_d = [\cf4 "durst, dared"\cf0 ,\
+    \cf4 "dealt"\cf0 ,\
+    \cf4 "dug"\cf0 ,\
+    \cf4 "dived, dove"\cf0 ,\
+    \cf4 "did"\cf0 ,\
+    \cf4 "drew"\cf0 ,\
+    \cf4 "dreamt, dreamed"\cf0 ,\
+    \cf4 "drank"\cf0 ,\
+    \cf4 "drove"\cf0 ,\
+    \cf4 "dwelt"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_d = [\cf4 "dared"\cf0 ,\
+    \cf4 "dealt"\cf0 ,\
+    \cf4 "dug"\cf0 ,\
+    \cf4 "dived"\cf0 ,\
+    \cf4 "done"\cf0 ,\
+    \cf4 "drawn"\cf0 ,\
+    \cf4 "dreamt, dreamed"\cf0 ,\
+    \cf4 "drunk"\cf0 ,\
+    \cf4 "driven"\cf0 ,\
+    \cf4 "dwelt"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_d = [\cf4 "\uc0\u1089 \u1084 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1080 \u1084 \u1077 \u1090 \u1100  \u1076 \u1077 \u1083 \u1086 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1086 \u1087 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1099 \u1088 \u1103 \u1090 \u1100 , \u1087 \u1086 \u1075 \u1088 \u1091 \u1078 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1077 \u1083 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1090 \u1072 \u1097 \u1080 \u1090 \u1100 , \u1088 \u1080 \u1089 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1075 \u1088 \u1077 \u1079 \u1080 \u1090 \u1100 , \u1084 \u1077 \u1095 \u1090 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1080 \u1090 \u1100 , \u1074 \u1099 \u1087 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1075 \u1085 \u1072 \u1090 \u1100 , \u1077 \u1093 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1073 \u1080 \u1090 \u1072 \u1090 \u1100 , \u1079 \u1072 \u1076 \u1077 \u1088 \u1078 \u1080 \u1074 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ]\
+\
+\cf2 //type E\
+\cf0 \
+\cf3 let\cf0  e_header = \cf4 "E"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_e = [\cf4 "eat"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_e = [\cf4 "ate"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_e = [\cf4 "eaten"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_e = [\cf4 "\uc0\u1045 \u1089 \u1090 \u1100 , \u1082 \u1091 \u1096 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type F\
+\cf0 \
+\cf3 let\cf0  f_header = \cf4 "F"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_f = [\cf4 "fall"\cf0 ,\
+    \cf4 "feed"\cf0 ,\
+    \cf4 "feel"\cf0 ,\
+    \cf4 "fight"\cf0 ,\
+    \cf4 "find"\cf0 ,\
+    \cf4 "flee"\cf0 ,\
+    \cf4 "fling"\cf0 ,\
+    \cf4 "floodlight"\cf0 ,\
+    \cf4 "fly"\cf0 ,\
+    \cf4 "forbear"\cf0 ,\
+    \cf4 "forbid"\cf0 ,\
+    \cf4 "forecast"\cf0 ,\
+    \cf4 "foresee"\cf0 ,\
+    \cf4 "foretell"\cf0 ,\
+    \cf4 "forget"\cf0 ,\
+    \cf4 "forgive"\cf0 ,\
+    \cf4 "forsake"\cf0 ,\
+    \cf4 "forswear"\cf0 ,\
+    \cf4 "freeze"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_f = [\cf4 "fell"\cf0 ,\
+    \cf4 "fed"\cf0 ,\
+    \cf4 "felt"\cf0 ,\
+    \cf4 "fought"\cf0 ,\
+    \cf4 "found"\cf0 ,\
+    \cf4 "fled"\cf0 ,\
+    \cf4 "flung"\cf0 ,\
+    \cf4 "floodlighted, floodlit"\cf0 ,\
+    \cf4 "flew"\cf0 ,\
+    \cf4 "forbore"\cf0 ,\
+    \cf4 "forbad, forbade"\cf0 ,\
+    \cf4 "forecast, forecasted"\cf0 ,\
+    \cf4 "foresaw"\cf0 ,\
+    \cf4 "foretold"\cf0 ,\
+    \cf4 "forgot"\cf0 ,\
+    \cf4 "forgave"\cf0 ,\
+    \cf4 "forsook"\cf0 ,\
+    \cf4 "forswore"\cf0 ,\
+    \cf4 "froze"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_f = [\cf4 "fallen"\cf0 ,\
+    \cf4 "fed"\cf0 ,\
+    \cf4 "felt"\cf0 ,\
+    \cf4 "fought"\cf0 ,\
+    \cf4 "found"\cf0 ,\
+    \cf4 "fled"\cf0 ,\
+    \cf4 "flung"\cf0 ,\
+    \cf4 "floodlighted, floodlit"\cf0 ,\
+    \cf4 "flown"\cf0 ,\
+    \cf4 "forborne"\cf0 ,\
+    \cf4 "forbidden"\cf0 ,\
+    \cf4 "forecast, forecasted"\cf0 ,\
+    \cf4 "foreseen"\cf0 ,\
+    \cf4 "foretold"\cf0 ,\
+    \cf4 "forgotten"\cf0 ,\
+    \cf4 "forgiven"\cf0 ,\
+    \cf4 "forsaken"\cf0 ,\
+    \cf4 "forsworn"\cf0 ,\
+    \cf4 "frozen"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_f = [\cf4 "\uc0\u1087 \u1072 \u1076 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1086 \u1088 \u1084 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1095 \u1091 \u1074 \u1089 \u1090 \u1074 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1088 \u1072 \u1078 \u1072 \u1090 \u1100 \u1089 \u1103 , \u1076 \u1088 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1072 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1077 \u1078 \u1072 \u1090 \u1100 , \u1089 \u1087 \u1072 \u1089 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1088 \u1086 \u1089 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1089 \u1074 \u1077 \u1097 \u1072 \u1090 \u1100  \u1087 \u1088 \u1086 \u1078 \u1077 \u1082 \u1090 \u1086 \u1088 \u1086 \u1084 "\cf0 ,\
+    \cf4 "\uc0\u1083 \u1077 \u1090 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1086 \u1079 \u1076 \u1077 \u1088 \u1078 \u1080 \u1074 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1087 \u1088 \u1077 \u1090 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1077 \u1076 \u1089 \u1082 \u1072 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1077 \u1076 \u1074 \u1080 \u1076 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1077 \u1076 \u1089 \u1082 \u1072 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1073 \u1099 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1089 \u1090 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1082 \u1080 \u1076 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1090 \u1088 \u1077 \u1082 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1084 \u1077 \u1088 \u1079 \u1085 \u1091 \u1090 \u1100 , \u1079 \u1072 \u1084 \u1086 \u1088 \u1072 \u1078 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type G\
+\cf0 \
+\cf3 let\cf0  g_header = \cf4 "G"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_g = [\cf4 "gainsay"\cf0 ,\
+    \cf4 "get"\cf0 ,\
+    \cf4 "gild"\cf0 ,\
+    \cf4 "gird"\cf0 ,\
+    \cf4 "give"\cf0 ,\
+    \cf4 "go"\cf0 ,\
+    \cf4 "grave"\cf0 ,\
+    \cf4 "grind"\cf0 ,\
+    \cf4 "grow"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_g = [\cf4 "gainsaid"\cf0 ,\
+    \cf4 "got"\cf0 ,\
+    \cf4 "gilt, gilded"\cf0 ,\
+    \cf4 "girded, girt"\cf0 ,\
+    \cf4 "gave"\cf0 ,\
+    \cf4 "went"\cf0 ,\
+    \cf4 "graved"\cf0 ,\
+    \cf4 "ground"\cf0 ,\
+    \cf4 "grew"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_g = [\cf4 "gainsaid"\cf0 ,\
+    \cf4 "got"\cf0 ,\
+    \cf4 "gilt, gilded"\cf0 ,\
+    \cf4 "girded, girt"\cf0 ,\
+    \cf4 "given"\cf0 ,\
+    \cf4 "gone"\cf0 ,\
+    \cf4 "graved, graven"\cf0 ,\
+    \cf4 "ground"\cf0 ,\
+    \cf4 "grown"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_g = [\cf4 "\uc0\u1086 \u1090 \u1088 \u1080 \u1094 \u1072 \u1090 \u1100 , \u1087 \u1088 \u1086 \u1090 \u1080 \u1074 \u1086 \u1088 \u1077 \u1095 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1083 \u1091 \u1095 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1079 \u1086 \u1083 \u1086 \u1090 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1087 \u1086 \u1103 \u1089 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1080 \u1076 \u1090 \u1080 , \u1091 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1075 \u1088 \u1072 \u1074 \u1080 \u1088 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1090 \u1086 \u1095 \u1080 \u1090 \u1100 , \u1084 \u1086 \u1083 \u1086 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1089 \u1090 \u1080 "\cf0 ]\
+\
+\cf2 //type H\
+\cf0 \
+\cf3 let\cf0  h_header = \cf4 "H"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_h = [\cf4 "hamstring"\cf0 ,\
+    \cf4 "hang"\cf0 ,\
+    \cf4 "have"\cf0 ,\
+    \cf4 "hear"\cf0 ,\
+    \cf4 "heave"\cf0 ,\
+    \cf4 "hew"\cf0 ,\
+    \cf4 "hide"\cf0 ,\
+    \cf4 "hit"\cf0 ,\
+    \cf4 "hold"\cf0 ,\
+    \cf4 "hurt"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_h = [\cf4 "hamstringed, hamstrung"\cf0 ,\
+    \cf4 "hung, hanged"\cf0 ,\
+    \cf4 "had"\cf0 ,\
+    \cf4 "heard"\cf0 ,\
+    \cf4 "heaved, hove"\cf0 ,\
+    \cf4 "hewed"\cf0 ,\
+    \cf4 "hid"\cf0 ,\
+    \cf4 "hit"\cf0 ,\
+    \cf4 "held"\cf0 ,\
+    \cf4 "hurt"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_h = [\cf4 "hamstringed, hamstrung"\cf0 ,\
+    \cf4 "hung, hanged"\cf0 ,\
+    \cf4 "had"\cf0 ,\
+    \cf4 "heard"\cf0 ,\
+    \cf4 "heaved, hove"\cf0 ,\
+    \cf4 "hewed, hewn"\cf0 ,\
+    \cf4 "hidden"\cf0 ,\
+    \cf4 "hit"\cf0 ,\
+    \cf4 "held"\cf0 ,\
+    \cf4 "hurt"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_h = [\cf4 "\uc0\u1087 \u1086 \u1076 \u1088 \u1077 \u1079 \u1072 \u1090 \u1100  \u1087 \u1086 \u1076 \u1078 \u1080 \u1083 \u1082 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1080 \u1089 \u1077 \u1090 \u1100 , \u1087 \u1086 \u1074 \u1077 \u1089 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1080 \u1084 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1083 \u1091 \u1096 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1076 \u1099 \u1084 \u1072 \u1090 \u1100 (\u1089 \u1103 )"\cf0 ,\
+    \cf4 "\uc0\u1088 \u1091 \u1073 \u1080 \u1090 \u1100 , \u1090 \u1077 \u1089 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1103 \u1090 \u1072 \u1090 \u1100 (\u1089 \u1103 )"\cf0 ,\
+    \cf4 "\uc0\u1091 \u1076 \u1072 \u1088 \u1080 \u1090 \u1100 , \u1087 \u1086 \u1087 \u1072 \u1089 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1077 \u1088 \u1078 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1080 \u1095 \u1080 \u1085 \u1080 \u1090 \u1100  \u1073 \u1086 \u1083 \u1100 "\cf0 ]\
+\
+\cf2 //type I\
+\cf0 \
+\cf3 let\cf0  i_header = \cf4 "I"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_i = [\cf4 "inlay"\cf0 ,\
+    \cf4 "input"\cf0 ,\
+    \cf4 "inset"\cf0 ,\
+    \cf4 "interweave"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_i = [\cf4 "inlaid"\cf0 ,\
+    \cf4 "input, inputted"\cf0 ,\
+    \cf4 "inset"\cf0 ,\
+    \cf4 "interwove"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_i = [\cf4 "inlaid"\cf0 ,\
+    \cf4 "input, inputted"\cf0 ,\
+    \cf4 "inset"\cf0 ,\
+    \cf4 "interwoven"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_i = [\cf4 "\uc0\u1074 \u1082 \u1083 \u1072 \u1076 \u1099 \u1074 \u1072 \u1090 \u1100 , \u1074 \u1099 \u1089 \u1090 \u1080 \u1083 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1089 \u1090 \u1072 \u1074 \u1083 \u1103 \u1090 \u1100 , \u1074 \u1082 \u1083 \u1072 \u1076 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1087 \u1083 \u1077 \u1089 \u1090 \u1080 , \u1074 \u1086 \u1090 \u1082 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type K\
+\cf0 \
+\cf3 let\cf0  k_header = \cf4 "K"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_k = [\cf4 "keep"\cf0 ,\
+    \cf4 "ken"\cf0 ,\
+    \cf4 "kneel"\cf0 ,\
+    \cf4 "knit"\cf0 ,\
+    \cf4 "know"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_k = [\cf4 "kept"\cf0 ,\
+    \cf4 "kenned, kent"\cf0 ,\
+    \cf4 "knelt, kneeled"\cf0 ,\
+    \cf4 "knit, knitted"\cf0 ,\
+    \cf4 "knew"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_k = [\cf4 "kept"\cf0 ,\
+    \cf4 "kenned"\cf0 ,\
+    \cf4 "knelt, kneeled"\cf0 ,\
+    \cf4 "knit, knitted"\cf0 ,\
+    \cf4 "known"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_k = [\cf4 "\uc0\u1093 \u1088 \u1072 \u1085 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1085 \u1072 \u1090 \u1100 , \u1091 \u1079 \u1085 \u1072 \u1074 \u1072 \u1090 \u1100  \u1087 \u1086  \u1074 \u1080 \u1076 \u1091 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1072 \u1085 \u1086 \u1074 \u1080 \u1090 \u1100 \u1089 \u1103  \u1085 \u1072  \u1082 \u1086 \u1083 \u1077 \u1085 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1103 \u1079 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1085 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type L\
+\cf0 \
+\cf3 let\cf0  l_header = \cf4 "L"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_l = [\cf4 "lade"\cf0 ,\
+    \cf4 "lay"\cf0 ,\
+    \cf4 "lead"\cf0 ,\
+    \cf4 "lean"\cf0 ,\
+    \cf4 "leap"\cf0 ,\
+    \cf4 "learn"\cf0 ,\
+    \cf4 "leave"\cf0 ,\
+    \cf4 "lend"\cf0 ,\
+    \cf4 "let"\cf0 ,\
+    \cf4 "lie"\cf0 ,\
+    \cf4 "light"\cf0 ,\
+    \cf4 "lose"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_l = [\cf4 "laded"\cf0 ,\
+    \cf4 "laid"\cf0 ,\
+    \cf4 "led"\cf0 ,\
+    \cf4 "leant, leaned"\cf0 ,\
+    \cf4 "leapt, leaped"\cf0 ,\
+    \cf4 "learnt, learned"\cf0 ,\
+    \cf4 "left"\cf0 ,\
+    \cf4 "lent"\cf0 ,\
+    \cf4 "let"\cf0 ,\
+    \cf4 "lay"\cf0 ,\
+    \cf4 "lit, lighted"\cf0 ,\
+    \cf4 "lost"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_l = [\cf4 "laded, laden"\cf0 ,\
+    \cf4 "laid"\cf0 ,\
+    \cf4 "led"\cf0 ,\
+    \cf4 "leant, leaned"\cf0 ,\
+    \cf4 "leapt, leaped"\cf0 ,\
+    \cf4 "learnt, learned"\cf0 ,\
+    \cf4 "left"\cf0 ,\
+    \cf4 "lent"\cf0 ,\
+    \cf4 "let"\cf0 ,\
+    \cf4 "lain"\cf0 ,\
+    \cf4 "lit, lighted"\cf0 ,\
+    \cf4 "lost"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_l = [\cf4 "\uc0\u1075 \u1088 \u1091 \u1079 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1083 \u1072 \u1089 \u1090 \u1100 , \u1087 \u1086 \u1083 \u1086 \u1078 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1077 \u1089 \u1090 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1087 \u1077 \u1088 \u1077 \u1090 \u1100 \u1089 \u1103 , \u1087 \u1088 \u1080 \u1089 \u1083 \u1086 \u1085 \u1080 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1099 \u1075 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1095 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1089 \u1090 \u1072 \u1074 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1076 \u1086 \u1083 \u1078 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1091 \u1089 \u1090 \u1080 \u1090 \u1100 , \u1076 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1083 \u1077 \u1078 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1089 \u1074 \u1077 \u1090 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1090 \u1077 \u1088 \u1103 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type M\
+\cf0 \
+\cf3 let\cf0  m_header = \cf4 "M"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_m = [\cf4 "make"\cf0 ,\
+    \cf4 "may"\cf0 ,\
+    \cf4 "mean"\cf0 ,\
+    \cf4 "meet"\cf0 ,\
+    \cf4 "miscast"\cf0 ,\
+    \cf4 "misdeal"\cf0 ,\
+    \cf4 "misgive"\cf0 ,\
+    \cf4 "mishear"\cf0 ,\
+    \cf4 "mishit"\cf0 ,\
+    \cf4 "mislay"\cf0 ,\
+    \cf4 "mislead"\cf0 ,\
+    \cf4 "misread"\cf0 ,\
+    \cf4 "misspell"\cf0 ,\
+    \cf4 "misspend"\cf0 ,\
+    \cf4 "mistake"\cf0 ,\
+    \cf4 "misunderstand"\cf0 ,\
+    \cf4 "mow"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_m = [\cf4 "made"\cf0 ,\
+    \cf4 "might"\cf0 ,\
+    \cf4 "meant"\cf0 ,\
+    \cf4 "met"\cf0 ,\
+    \cf4 "miscast"\cf0 ,\
+    \cf4 "misdealt"\cf0 ,\
+    \cf4 "misgave"\cf0 ,\
+    \cf4 "misheard"\cf0 ,\
+    \cf4 "mishit"\cf0 ,\
+    \cf4 "mislaid"\cf0 ,\
+    \cf4 "misled"\cf0 ,\
+    \cf4 "misread"\cf0 ,\
+    \cf4 "misspelt, misspeled"\cf0 ,\
+    \cf4 "misspent"\cf0 ,\
+    \cf4 "mistook"\cf0 ,\
+    \cf4 "misunderstood"\cf0 ,\
+    \cf4 "mowed"\cf0 ,\
+    \cf4 "forswore"\cf0 ,\
+    \cf4 "froze"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_m = [\cf4 "made"\cf0 ,\
+    \cf4 "might"\cf0 ,\
+    \cf4 "meant"\cf0 ,\
+    \cf4 "met"\cf0 ,\
+    \cf4 "miscast"\cf0 ,\
+    \cf4 "misdealt"\cf0 ,\
+    \cf4 "misgiven"\cf0 ,\
+    \cf4 "misheard"\cf0 ,\
+    \cf4 "mishit"\cf0 ,\
+    \cf4 "mislaid"\cf0 ,\
+    \cf4 "misled"\cf0 ,\
+    \cf4 "misread"\cf0 ,\
+    \cf4 "misspelt, misspeled"\cf0 ,\
+    \cf4 "misspent"\cf0 ,\
+    \cf4 "mistaken"\cf0 ,\
+    \cf4 "misunderstood"\cf0 ,\
+    \cf4 "mowed, movn"\cf0 ,\
+    \cf4 "forsworn"\cf0 ,\
+    \cf4 "frozen"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_m = [\cf4 "\uc0\u1076 \u1077 \u1083 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1084 \u1086 \u1095 \u1100 , \u1080 \u1084 \u1077 \u1090 \u1100  \u1074 \u1086 \u1079 \u1084 \u1086 \u1078 \u1085 \u1086 \u1089 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1076 \u1088 \u1072 \u1079 \u1091 \u1084 \u1077 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1089 \u1090 \u1088 \u1077 \u1090 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1077 \u1087 \u1088 \u1072 \u1074 \u1080 \u1083 \u1100 \u1085 \u1086  \u1088 \u1072 \u1089 \u1087 \u1088 \u1077 \u1076 \u1077 \u1083 \u1103 \u1090 \u1100  \u1088 \u1086 \u1083 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1089 \u1090 \u1091 \u1087 \u1072 \u1090 \u1100  \u1085 \u1077 \u1087 \u1088 \u1072 \u1074 \u1080 \u1083 \u1100 \u1085 \u1086 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1085 \u1091 \u1096 \u1072 \u1090 \u1100  \u1086 \u1087 \u1072 \u1089 \u1077 \u1085 \u1080 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1089 \u1083 \u1099 \u1096 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1084 \u1072 \u1093 \u1085 \u1091 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1083 \u1072 \u1089 \u1090 \u1100  \u1085 \u1077  \u1085 \u1072  \u1084 \u1077 \u1089 \u1090 \u1086 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1074 \u1077 \u1089 \u1090 \u1080  \u1074  \u1079 \u1072 \u1073 \u1083 \u1091 \u1078 \u1076 \u1077 \u1085 \u1080 \u1077 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1077 \u1087 \u1088 \u1072 \u1074 \u1080 \u1083 \u1100 \u1085 \u1086  \u1080 \u1089 \u1090 \u1086 \u1083 \u1082 \u1086 \u1074 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1080 \u1089 \u1072 \u1090 \u1100  \u1089  \u1086 \u1096 \u1080 \u1073 \u1082 \u1072 \u1084 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1101 \u1082 \u1086 \u1085 \u1086 \u1084 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1077 \u1087 \u1088 \u1072 \u1074 \u1080 \u1083 \u1100 \u1085 \u1086  \u1087 \u1086 \u1085 \u1080 \u1084 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1077 \u1087 \u1088 \u1072 \u1074 \u1080 \u1083 \u1100 \u1085 \u1086  \u1087 \u1086 \u1085 \u1080 \u1084 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1086 \u1089 \u1080 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type O\
+\cf0 \
+\cf3 let\cf0  o_header = \cf4 "O"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_o = [\cf4 "outbid"\cf0 ,\
+    \cf4 "outdo"\cf0 ,\
+    \cf4 "outfight"\cf0 ,\
+    \cf4 "outgrow"\cf0 ,\
+    \cf4 "output"\cf0 ,\
+    \cf4 "outrun"\cf0 ,\
+    \cf4 "outsell"\cf0 ,\
+    \cf4 "outshine"\cf0 ,\
+    \cf4 "overbid"\cf0 ,\
+    \cf4 "overcome"\cf0 ,\
+    \cf4 "overdo"\cf0 ,\
+    \cf4 "overdraw"\cf0 ,\
+    \cf4 "overeat"\cf0 ,\
+    \cf4 "overfly"\cf0 ,\
+    \cf4 "overhang"\cf0 ,\
+    \cf4 "overhear"\cf0 ,\
+    \cf4 "overlay"\cf0 ,\
+    \cf4 "overpay"\cf0 ,\
+    \cf4 "override"\cf0 ,\
+    \cf4 "overrun"\cf0 ,\
+    \cf4 "oversee"\cf0 ,\
+    \cf4 "overshoot"\cf0 ,\
+    \cf4 "oversleep"\cf0 ,\
+    \cf4 "overtake"\cf0 ,\
+    \cf4 "overthrow"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_o = [\cf4 "outbid"\cf0 ,\
+    \cf4 "outdid"\cf0 ,\
+    \cf4 "outfought"\cf0 ,\
+    \cf4 "outgrew"\cf0 ,\
+    \cf4 "output, outputted"\cf0 ,\
+    \cf4 "outran"\cf0 ,\
+    \cf4 "outsold"\cf0 ,\
+    \cf4 "outshone"\cf0 ,\
+    \cf4 "overbid"\cf0 ,\
+    \cf4 "overcame"\cf0 ,\
+    \cf4 "overdid"\cf0 ,\
+    \cf4 "overdrew"\cf0 ,\
+    \cf4 "overate"\cf0 ,\
+    \cf4 "overflew"\cf0 ,\
+    \cf4 "overhung"\cf0 ,\
+    \cf4 "overheard"\cf0 ,\
+    \cf4 "overlaid"\cf0 ,\
+    \cf4 "overpaid"\cf0 ,\
+    \cf4 "overrode"\cf0 ,\
+    \cf4 "overran"\cf0 ,\
+    \cf4 "oversaw"\cf0 ,\
+    \cf4 "overshot"\cf0 ,\
+    \cf4 "overslept"\cf0 ,\
+    \cf4 "overtook"\cf0 ,\
+    \cf4 "overthrew"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_o = [\cf4 "outbid"\cf0 ,\
+    \cf4 "outdone"\cf0 ,\
+    \cf4 "outfought"\cf0 ,\
+    \cf4 "outgrown"\cf0 ,\
+    \cf4 "output, outputted"\cf0 ,\
+    \cf4 "outrun"\cf0 ,\
+    \cf4 "outsold"\cf0 ,\
+    \cf4 "outshone"\cf0 ,\
+    \cf4 "overbid"\cf0 ,\
+    \cf4 "overcome"\cf0 ,\
+    \cf4 "overdone"\cf0 ,\
+    \cf4 "overdrawn"\cf0 ,\
+    \cf4 "overeaten"\cf0 ,\
+    \cf4 "overflown"\cf0 ,\
+    \cf4 "overhung"\cf0 ,\
+    \cf4 "overheard"\cf0 ,\
+    \cf4 "overlaid"\cf0 ,\
+    \cf4 "overpaid"\cf0 ,\
+    \cf4 "overridden"\cf0 ,\
+    \cf4 "overrun"\cf0 ,\
+    \cf4 "overseen"\cf0 ,\
+    \cf4 "overshot"\cf0 ,\
+    \cf4 "overslept"\cf0 ,\
+    \cf4 "overtaken"\cf0 ,\
+    \cf4 "overthrown"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_o = [\cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1073 \u1080 \u1074 \u1072 \u1090 \u1100  \u1094 \u1077 \u1085 \u1091 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1077 \u1074 \u1086 \u1089 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1073 \u1077 \u1078 \u1076 \u1072 \u1090 \u1100  (\u1074  \u1073 \u1086 \u1102 )"\cf0 ,\
+    \cf4 "\uc0\u1074 \u1099 \u1088 \u1072 \u1089 \u1090 \u1072 \u1090 \u1100  \u1080 \u1079 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1099 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100 , \u1087 \u1088 \u1086 \u1080 \u1079 \u1074 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1075 \u1086 \u1085 \u1103 \u1090 \u1100 , \u1086 \u1087 \u1077 \u1088 \u1077 \u1078 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100  \u1083 \u1091 \u1095 \u1096 \u1077  \u1080 \u1083 \u1080  \u1076 \u1086 \u1088 \u1086 \u1078 \u1077 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1090 \u1084 \u1077 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1074 \u1077 \u1083 \u1077 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1086 \u1084 \u1087 \u1077 \u1085 \u1089 \u1080 \u1088 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1077 \u1083 \u1072 \u1090 \u1100  \u1095 \u1090 \u1086 -\u1083 \u1080 \u1073 \u1086  \u1080 \u1079 \u1083 \u1080 \u1096 \u1085 \u1077 , \u1095 \u1088 \u1077 \u1079 \u1084 \u1077 \u1088 \u1085 \u1086 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1077 \u1074 \u1099 \u1096 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1073 \u1098 \u1077 \u1076 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1083 \u1077 \u1090 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1072 \u1074 \u1080 \u1089 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1076 \u1089 \u1083 \u1091 \u1096 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1082 \u1088 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1087 \u1083 \u1072 \u1095 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1090 \u1074 \u1077 \u1088 \u1075 \u1072 \u1090 \u1100 , \u1086 \u1090 \u1082 \u1083 \u1086 \u1085 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1083 \u1080 \u1074 \u1072 \u1090 \u1100 \u1089 \u1103  \u1095 \u1077 \u1088 \u1077 \u1079  \u1082 \u1088 \u1072 \u1081 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1072 \u1076 \u1079 \u1080 \u1088 \u1072 \u1090 \u1100  \u1079 \u1072 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1089 \u1089 \u1090 \u1088 \u1077 \u1083 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1089 \u1087 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1086 \u1075 \u1086 \u1085 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1074 \u1077 \u1088 \u1075 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type P\
+\cf0 \
+\cf3 let\cf0  p_header = \cf4 "P"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_p = [\cf4 "partake"\cf0 ,\
+    \cf4 "pay"\cf0 ,\
+    \cf4 "plead"\cf0 ,\
+    \cf4 "prepay"\cf0 ,\
+    \cf4 "prove"\cf0 ,\
+    \cf4 "put"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_p = [\cf4 "partook"\cf0 ,\
+    \cf4 "paid"\cf0 ,\
+    \cf4 "pleaded, pled"\cf0 ,\
+    \cf4 "prepaid"\cf0 ,\
+    \cf4 "proved"\cf0 ,\
+    \cf4 "put"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_p = [\cf4 "partaken"\cf0 ,\
+    \cf4 "paid"\cf0 ,\
+    \cf4 "pleaded, pled"\cf0 ,\
+    \cf4 "prepaid"\cf0 ,\
+    \cf4 "proved, proven"\cf0 ,\
+    \cf4 "put"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_p = [\cf4 "\uc0\u1074 \u1082 \u1091 \u1096 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1083 \u1072 \u1090 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1073 \u1088 \u1072 \u1097 \u1072 \u1090 \u1100 \u1089 \u1103  \u1082  \u1089 \u1091 \u1076 \u1091 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1083 \u1072 \u1090 \u1080 \u1090 \u1100  \u1074 \u1087 \u1077 \u1088 \u1077 \u1076 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1086 \u1082 \u1072 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 , \u1086 \u1082 \u1072 \u1079 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1083 \u1072 \u1089 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type Q\
+\cf0 \
+\cf3 let\cf0  q_header = \cf4 "Q"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_q = [\cf4 "quit"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_q = [\cf4 "quit, quitted"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_q = [\cf4 "quit, quitted"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_q = [\cf4 "\uc0\u1087 \u1086 \u1082 \u1080 \u1076 \u1072 \u1090 \u1100 , \u1086 \u1089 \u1090 \u1072 \u1074 \u1083 \u1103 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type R\
+\cf0 \
+\cf3 let\cf0  r_header = \cf4 "R"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_r = [\cf4 "read"\cf0 ,\
+    \cf4 "rebind"\cf0 ,\
+    \cf4 "rebuild"\cf0 ,\
+    \cf4 "recast"\cf0 ,\
+    \cf4 "redo"\cf0 ,\
+    \cf4 "rehear"\cf0 ,\
+    \cf4 "remake"\cf0 ,\
+    \cf4 "rend"\cf0 ,\
+    \cf4 "repay"\cf0 ,\
+    \cf4 "rerun"\cf0 ,\
+    \cf4 "resell"\cf0 ,\
+    \cf4 "reset"\cf0 ,\
+    \cf4 "resit"\cf0 ,\
+    \cf4 "retake"\cf0 ,\
+    \cf4 "retell"\cf0 ,\
+    \cf4 "rewrite"\cf0 ,\
+    \cf4 "rid"\cf0 ,\
+    \cf4 "ride"\cf0 ,\
+    \cf4 "ring"\cf0 ,\
+    \cf4 "rise"\cf0 ,\
+    \cf4 "rive"\cf0 ,\
+    \cf4 "run"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_r = [\cf4 "read, red"\cf0 ,\
+    \cf4 "rebound"\cf0 ,\
+    \cf4 "rebuilt"\cf0 ,\
+    \cf4 "recast"\cf0 ,\
+    \cf4 "redid"\cf0 ,\
+    \cf4 "reheard"\cf0 ,\
+    \cf4 "remade"\cf0 ,\
+    \cf4 "rent"\cf0 ,\
+    \cf4 "repaid"\cf0 ,\
+    \cf4 "reran"\cf0 ,\
+    \cf4 "resold"\cf0 ,\
+    \cf4 "reset"\cf0 ,\
+    \cf4 "resat"\cf0 ,\
+    \cf4 "retook"\cf0 ,\
+    \cf4 "retold"\cf0 ,\
+    \cf4 "rewrote"\cf0 ,\
+    \cf4 "rid, ridden"\cf0 ,\
+    \cf4 "rode"\cf0 ,\
+    \cf4 "rang"\cf0 ,\
+    \cf4 "rose"\cf0 ,\
+    \cf4 "rived"\cf0 ,\
+    \cf4 "ran"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_r = [\cf4 "read, red"\cf0 ,\
+    \cf4 "rebound"\cf0 ,\
+    \cf4 "rebuilt"\cf0 ,\
+    \cf4 "recast"\cf0 ,\
+    \cf4 "redone"\cf0 ,\
+    \cf4 "reheard"\cf0 ,\
+    \cf4 "remade"\cf0 ,\
+    \cf4 "rent"\cf0 ,\
+    \cf4 "repaid"\cf0 ,\
+    \cf4 "rerun"\cf0 ,\
+    \cf4 "resold"\cf0 ,\
+    \cf4 "reset"\cf0 ,\
+    \cf4 "resat"\cf0 ,\
+    \cf4 "retaken"\cf0 ,\
+    \cf4 "retold"\cf0 ,\
+    \cf4 "rewritten"\cf0 ,\
+    \cf4 "rid, ridden"\cf0 ,\
+    \cf4 "ridden"\cf0 ,\
+    \cf4 "rung"\cf0 ,\
+    \cf4 "risen"\cf0 ,\
+    \cf4 "riven"\cf0 ,\
+    \cf4 "run"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_r = [\cf4 "\uc0\u1095 \u1080 \u1090 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1074 \u1103 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1089 \u1090 \u1088 \u1086 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1080 \u1076 \u1086 \u1080 \u1079 \u1084 \u1077 \u1085 \u1103 \u1090 \u1100 , \u1087 \u1088 \u1077 \u1086 \u1073 \u1088 \u1072 \u1079 \u1086 \u1074 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1074 \u1090 \u1086 \u1088 \u1103 \u1090 \u1100  \u1089 \u1076 \u1077 \u1083 \u1072 \u1085 \u1085 \u1086 \u1077 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1083 \u1091 \u1096 \u1072 \u1090 \u1100  \u1074 \u1090 \u1086 \u1088 \u1080 \u1095 \u1085 \u1086 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1076 \u1077 \u1083 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1079 \u1076 \u1080 \u1088 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1090 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100  \u1076 \u1086 \u1083 \u1075 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1099 \u1087 \u1086 \u1083 \u1085 \u1103 \u1090 \u1100  \u1087 \u1086 \u1074 \u1090 \u1086 \u1088 \u1085 \u1086 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1087 \u1088 \u1086 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1086 \u1079 \u1074 \u1088 \u1072 \u1097 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1089 \u1080 \u1078 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1073 \u1080 \u1088 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1089 \u1082 \u1072 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1087 \u1080 \u1089 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1080 \u1079 \u1073 \u1072 \u1074 \u1083 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1077 \u1079 \u1076 \u1080 \u1090 \u1100  \u1074 \u1077 \u1088 \u1093 \u1086 \u1084 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1074 \u1086 \u1085 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1076 \u1085 \u1103 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1089 \u1097 \u1077 \u1087 \u1083 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1077 \u1078 \u1072 \u1090 \u1100 , \u1090 \u1077 \u1095 \u1100 "\cf0 ]\
+\
+\cf2 //type S\
+\cf0 \
+\cf3 let\cf0  s_header = \cf4 "S"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_s = [\cf4 "saw"\cf0 ,\
+    \cf4 "say"\cf0 ,\
+    \cf4 "see"\cf0 ,\
+    \cf4 "seek"\cf0 ,\
+    \cf4 "sell"\cf0 ,\
+    \cf4 "send"\cf0 ,\
+    \cf4 "set"\cf0 ,\
+    \cf4 "sew"\cf0 ,\
+    \cf4 "shake"\cf0 ,\
+    \cf4 "shave"\cf0 ,\
+    \cf4 "shear"\cf0 ,\
+    \cf4 "shed"\cf0 ,\
+    \cf4 "shine"\cf0 ,\
+    \cf4 "shoe"\cf0 ,\
+    \cf4 "shoot"\cf0 ,\
+    \cf4 "show"\cf0 ,\
+    \cf4 "shred"\cf0 ,\
+    \cf4 "shrink"\cf0 ,\
+    \cf4 "shrive"\cf0 ,\
+    \cf4 "shut"\cf0 ,\
+    \cf4 "sing"\cf0 ,\
+    \cf4 "sink"\cf0 ,\
+    \cf4 "sit"\cf0 ,\
+    \cf4 "slay"\cf0 ,\
+    \cf4 "sleep"\cf0 ,\
+    \cf4 "slide"\cf0 ,\
+    \cf4 "sling"\cf0 ,\
+    \cf4 "slink"\cf0 ,\
+    \cf4 "slit"\cf0 ,\
+    \cf4 "smell"\cf0 ,\
+    \cf4 "smite"\cf0 ,\
+    \cf4 "sow"\cf0 ,\
+    \cf4 "speak"\cf0 ,\
+    \cf4 "speed"\cf0 ,\
+    \cf4 "spell"\cf0 ,\
+    \cf4 "spend"\cf0 ,\
+    \cf4 "spill"\cf0 ,\
+    \cf4 "spin"\cf0 ,\
+    \cf4 "spit"\cf0 ,\
+    \cf4 "split"\cf0 ,\
+    \cf4 "spoil"\cf0 ,\
+    \cf4 "spotlight"\cf0 ,\
+    \cf4 "spread"\cf0 ,\
+    \cf4 "spring"\cf0 ,\
+    \cf4 "stand"\cf0 ,\
+    \cf4 "stave"\cf0 ,\
+    \cf4 "steal"\cf0 ,\
+    \cf4 "stick"\cf0 ,\
+    \cf4 "sting"\cf0 ,\
+    \cf4 "stink"\cf0 ,\
+    \cf4 "strew"\cf0 ,\
+    \cf4 "stride"\cf0 ,\
+    \cf4 "strike"\cf0 ,\
+    \cf4 "string"\cf0 ,\
+    \cf4 "stive"\cf0 ,\
+    \cf4 "sublet"\cf0 ,\
+    \cf4 "swear"\cf0 ,\
+    \cf4 "sweep"\cf0 ,\
+    \cf4 "swell"\cf0 ,\
+    \cf4 "swim"\cf0 ,\
+    \cf4 "swing"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_s = [\cf4 "sawed"\cf0 ,\
+    \cf4 "said"\cf0 ,\
+    \cf4 "saw"\cf0 ,\
+    \cf4 "sought"\cf0 ,\
+    \cf4 "sold"\cf0 ,\
+    \cf4 "sent"\cf0 ,\
+    \cf4 "set"\cf0 ,\
+    \cf4 "sewed"\cf0 ,\
+    \cf4 "shook"\cf0 ,\
+    \cf4 "shaved"\cf0 ,\
+    \cf4 "sheared"\cf0 ,\
+    \cf4 "shed"\cf0 ,\
+    \cf4 "shone, shined"\cf0 ,\
+    \cf4 "shod"\cf0 ,\
+    \cf4 "shot"\cf0 ,\
+    \cf4 "showed"\cf0 ,\
+    \cf4 "shred, shredded"\cf0 ,\
+    \cf4 "shrank, shrunk"\cf0 ,\
+    \cf4 "shrove, shrived"\cf0 ,\
+    \cf4 "shut"\cf0 ,\
+    \cf4 "sang"\cf0 ,\
+    \cf4 "sank"\cf0 ,\
+    \cf4 "sat"\cf0 ,\
+    \cf4 "slew"\cf0 ,\
+    \cf4 "slept"\cf0 ,\
+    \cf4 "slid"\cf0 ,\
+    \cf4 "slung"\cf0 ,\
+    \cf4 "slunk"\cf0 ,\
+    \cf4 "slit"\cf0 ,\
+    \cf4 "smelt, smelled"\cf0 ,\
+    \cf4 "smote"\cf0 ,\
+    \cf4 "sowed"\cf0 ,\
+    \cf4 "spoke"\cf0 ,\
+    \cf4 "sped, speeded"\cf0 ,\
+    \cf4 "spelt, spelled"\cf0 ,\
+    \cf4 "spent"\cf0 ,\
+    \cf4 "spilt, spilled"\cf0 ,\
+    \cf4 "spun, span"\cf0 ,\
+    \cf4 "spat, spit"\cf0 ,\
+    \cf4 "split"\cf0 ,\
+    \cf4 "spoilt, spoiled"\cf0 ,\
+    \cf4 "spotlit, spotlighted"\cf0 ,\
+    \cf4 "spread"\cf0 ,\
+    \cf4 "sprang"\cf0 ,\
+    \cf4 "stood"\cf0 ,\
+    \cf4 "staved, stove"\cf0 ,\
+    \cf4 "stole"\cf0 ,\
+    \cf4 "stuck"\cf0 ,\
+    \cf4 "stung"\cf0 ,\
+    \cf4 "stank, stunk"\cf0 ,\
+    \cf4 "strewed"\cf0 ,\
+    \cf4 "strode"\cf0 ,\
+    \cf4 "struck"\cf0 ,\
+    \cf4 "strung"\cf0 ,\
+    \cf4 "strove"\cf0 ,\
+    \cf4 "sublet"\cf0 ,\
+    \cf4 "swore"\cf0 ,\
+    \cf4 "swept"\cf0 ,\
+    \cf4 "swelled"\cf0 ,\
+    \cf4 "swam"\cf0 ,\
+    \cf4 "swung"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_s = [\cf4 "sawed, sawn"\cf0 ,\
+    \cf4 "said"\cf0 ,\
+    \cf4 "seen"\cf0 ,\
+    \cf4 "sought"\cf0 ,\
+    \cf4 "sold"\cf0 ,\
+    \cf4 "sent"\cf0 ,\
+    \cf4 "set"\cf0 ,\
+    \cf4 "sewed, sewn"\cf0 ,\
+    \cf4 "shaken"\cf0 ,\
+    \cf4 "shaved, shaven"\cf0 ,\
+    \cf4 "sheared, shorn"\cf0 ,\
+    \cf4 "shed"\cf0 ,\
+    \cf4 "shone, shined"\cf0 ,\
+    \cf4 "shod"\cf0 ,\
+    \cf4 "shot"\cf0 ,\
+    \cf4 "showed, shown"\cf0 ,\
+    \cf4 "shred, shredded"\cf0 ,\
+    \cf4 "shrunk"\cf0 ,\
+    \cf4 "shriven, shrived"\cf0 ,\
+    \cf4 "shut"\cf0 ,\
+    \cf4 "sung"\cf0 ,\
+    \cf4 "sunk"\cf0 ,\
+    \cf4 "sat"\cf0 ,\
+    \cf4 "slain"\cf0 ,\
+    \cf4 "slept"\cf0 ,\
+    \cf4 "slid"\cf0 ,\
+    \cf4 "slung"\cf0 ,\
+    \cf4 "slunk"\cf0 ,\
+    \cf4 "slit"\cf0 ,\
+    \cf4 "smelt, smelled"\cf0 ,\
+    \cf4 "smitten"\cf0 ,\
+    \cf4 "sowed, sown"\cf0 ,\
+    \cf4 "spoken"\cf0 ,\
+    \cf4 "sped, speeded"\cf0 ,\
+    \cf4 "spell, spelled"\cf0 ,\
+    \cf4 "spent"\cf0 ,\
+    \cf4 "spilt, spilled"\cf0 ,\
+    \cf4 "spun"\cf0 ,\
+    \cf4 "spat, spit"\cf0 ,\
+    \cf4 "split"\cf0 ,\
+    \cf4 "spoilt, spoiled"\cf0 ,\
+    \cf4 "spotlit, spotlighted"\cf0 ,\
+    \cf4 "spread"\cf0 ,\
+    \cf4 "sprung"\cf0 ,\
+    \cf4 "stood"\cf0 ,\
+    \cf4 "staved, stove"\cf0 ,\
+    \cf4 "stolen"\cf0 ,\
+    \cf4 "stuck"\cf0 ,\
+    \cf4 "stung"\cf0 ,\
+    \cf4 "stunk"\cf0 ,\
+    \cf4 "strewn, strewed"\cf0 ,\
+    \cf4 "stridden"\cf0 ,\
+    \cf4 "struck"\cf0 ,\
+    \cf4 "strung"\cf0 ,\
+    \cf4 "striven"\cf0 ,\
+    \cf4 "sublet"\cf0 ,\
+    \cf4 "sworn"\cf0 ,\
+    \cf4 "swept"\cf0 ,\
+    \cf4 "swollen, swelled"\cf0 ,\
+    \cf4 "swum"\cf0 ,\
+    \cf4 "swung"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_s = [\cf4 "\uc0\u1087 \u1080 \u1083 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1075 \u1086 \u1074 \u1086 \u1088 \u1080 \u1090 \u1100 , \u1089 \u1082 \u1072 \u1079 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1080 \u1076 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1080 \u1089 \u1082 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1089 \u1083 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1089 \u1090 \u1072 \u1085 \u1072 \u1074 \u1083 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1096 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1090 \u1088 \u1103 \u1089 \u1090 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1088 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1088 \u1080 \u1095 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1083 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1074 \u1077 \u1090 \u1080 \u1090 \u1100 , \u1089 \u1080 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1073 \u1091 \u1074 \u1072 \u1090 \u1100 , \u1087 \u1086 \u1076 \u1082 \u1086 \u1074 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1088 \u1077 \u1083 \u1103 \u1090 \u1100 , \u1076 \u1072 \u1074 \u1072 \u1090 \u1100  \u1087 \u1086 \u1073 \u1077 \u1075 \u1080 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1082 \u1072 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1088 \u1086 \u1084 \u1089 \u1072 \u1090 \u1100 , \u1088 \u1072 \u1089 \u1087 \u1086 \u1083 \u1079 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1086 \u1082 \u1088 \u1072 \u1097 \u1072 \u1090 \u1100 \u1089 \u1103 , \u1089 \u1078 \u1080 \u1084 \u1072 \u1090 \u1100 \u1089 \u1103 , \u1086 \u1090 \u1087 \u1088 \u1103 \u1085 \u1091 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1080 \u1089 \u1087 \u1086 \u1074 \u1077 \u1076 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1082 \u1088 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1090 \u1086 \u1085 \u1091 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1080 \u1076 \u1077 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1073 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1087 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1082 \u1086 \u1083 \u1100 \u1079 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1096 \u1074 \u1099 \u1088 \u1103 \u1090 \u1100 , \u1087 \u1086 \u1076 \u1074 \u1077 \u1096 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1080 \u1076 \u1090 \u1080  \u1082 \u1088 \u1072 \u1076 \u1091 \u1095 \u1080 \u1089 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1079 \u1076 \u1080 \u1088 \u1072 \u1090 \u1100 , \u1088 \u1072 \u1079 \u1088 \u1077 \u1079 \u1072 \u1090 \u1100  (\u1074 \u1076 \u1086 \u1083 \u1100 )"\cf0 ,\
+    \cf4 "\uc0\u1087 \u1072 \u1093 \u1085 \u1091 \u1090 \u1100 , \u1085 \u1102 \u1093 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1076 \u1072 \u1088 \u1103 \u1090 \u1100 , \u1088 \u1072 \u1079 \u1073 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1077 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1075 \u1086 \u1074 \u1086 \u1088 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1089 \u1082 \u1086 \u1088 \u1103 \u1090 \u1100 , \u1089 \u1087 \u1077 \u1096 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1080 \u1089 \u1072 \u1090 \u1100  \u1080 \u1083 \u1080  \u1095 \u1080 \u1090 \u1072 \u1090 \u1100  \u1087 \u1086  \u1073 \u1091 \u1082 \u1074 \u1072 \u1084 "\cf0 ,\
+    \cf4 "\uc0\u1090 \u1088 \u1072 \u1090 \u1080 \u1090 \u1100 , \u1087 \u1088 \u1086 \u1074 \u1086 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1083 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1103 \u1089 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1083 \u1077 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1089 \u1097 \u1077 \u1087 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1088 \u1090 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1089 \u1074 \u1077 \u1090 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1089 \u1087 \u1088 \u1086 \u1089 \u1090 \u1088 \u1072 \u1085 \u1103 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1082 \u1072 \u1082 \u1072 \u1090 \u1100 , \u1087 \u1088 \u1091 \u1078 \u1080 \u1085 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1086 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1083 \u1072 \u1084 \u1099 \u1074 \u1072 \u1090 \u1100 , \u1088 \u1072 \u1079 \u1073 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1082 \u1088 \u1072 \u1089 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1082 \u1086 \u1083 \u1086 \u1090 \u1100 , \u1087 \u1088 \u1080 \u1082 \u1083 \u1077 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1078 \u1072 \u1083 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1086 \u1085 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1089 \u1077 \u1103 \u1090 \u1100 , \u1091 \u1089 \u1090 \u1083 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1096 \u1072 \u1075 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1076 \u1072 \u1088 \u1080 \u1090 \u1100 , \u1073 \u1080 \u1090 \u1100 , \u1073 \u1072 \u1089 \u1090 \u1086 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1072 \u1085 \u1080 \u1079 \u1072 \u1090 \u1100 , \u1085 \u1072 \u1090 \u1103 \u1085 \u1091 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1072 \u1088 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1077 \u1088 \u1077 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100  \u1074  \u1089 \u1091 \u1073 \u1072 \u1088 \u1077 \u1085 \u1076 \u1091 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1083 \u1103 \u1089 \u1090 \u1100 \u1089 \u1103 , \u1073 \u1088 \u1072 \u1085 \u1080 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1084 \u1077 \u1089 \u1090 \u1080 , \u1087 \u1088 \u1086 \u1084 \u1095 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1079 \u1076 \u1091 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1083 \u1099 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1082 \u1072 \u1095 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ]\
+\
+\cf2 //type T\
+\cf0 \
+\cf3 let\cf0  t_header = \cf4 "T"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_t = [\cf4 "take"\cf0 ,\
+    \cf4 "teach"\cf0 ,\
+    \cf4 "tear"\cf0 ,\
+    \cf4 "tell"\cf0 ,\
+    \cf4 "think"\cf0 ,\
+    \cf4 "thrive"\cf0 ,\
+    \cf4 "throw"\cf0 ,\
+    \cf4 "thrust"\cf0 ,\
+    \cf4 "tread"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_t = [\cf4 "took"\cf0 ,\
+    \cf4 "tought"\cf0 ,\
+    \cf4 "tore"\cf0 ,\
+    \cf4 "told"\cf0 ,\
+    \cf4 "thougt"\cf0 ,\
+    \cf4 "throve, trived"\cf0 ,\
+    \cf4 "threw"\cf0 ,\
+    \cf4 "thrust"\cf0 ,\
+    \cf4 "trod"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_t = [\cf4 "taken"\cf0 ,\
+    \cf4 "tought"\cf0 ,\
+    \cf4 "torn"\cf0 ,\
+    \cf4 "told"\cf0 ,\
+    \cf4 "thought"\cf0 ,\
+    \cf4 "thriven, trived"\cf0 ,\
+    \cf4 "thrown"\cf0 ,\
+    \cf4 "thrust"\cf0 ,\
+    \cf4 "trod, trodden"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_t = [\cf4 "\uc0\u1074 \u1079 \u1103 \u1090 \u1100 , \u1073 \u1088 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1095 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1089 \u1089 \u1082 \u1072 \u1079 \u1099 \u1074 \u1072 \u1090 \u1100 , \u1089 \u1082 \u1072 \u1079 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1076 \u1091 \u1084 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1094 \u1074 \u1077 \u1090 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1088 \u1086 \u1089 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1090 \u1086 \u1083 \u1082 \u1085 \u1091 \u1090 \u1100 , \u1089 \u1091 \u1085 \u1091 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1090 \u1091 \u1087 \u1072 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type U\
+\cf0 \
+\cf3 let\cf0  u_header = \cf4 "U"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_u = [\cf4 "unbend"\cf0 ,\
+    \cf4 "underbid"\cf0 ,\
+    \cf4 "undercut"\cf0 ,\
+    \cf4 "undergo"\cf0 ,\
+    \cf4 "underlie"\cf0 ,\
+    \cf4 "underpay"\cf0 ,\
+    \cf4 "undersell"\cf0 ,\
+    \cf4 "understand"\cf0 ,\
+    \cf4 "undertake"\cf0 ,\
+    \cf4 "underwrite"\cf0 ,\
+    \cf4 "undo"\cf0 ,\
+    \cf4 "unfreeze"\cf0 ,\
+    \cf4 "unsay"\cf0 ,\
+    \cf4 "unwind"\cf0 ,\
+    \cf4 "uphold"\cf0 ,\
+    \cf4 "upset"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_u = [\cf4 "unbent"\cf0 ,\
+    \cf4 "underbid"\cf0 ,\
+    \cf4 "undercut"\cf0 ,\
+    \cf4 "underwent"\cf0 ,\
+    \cf4 "underlay"\cf0 ,\
+    \cf4 "underpaid"\cf0 ,\
+    \cf4 "undersold"\cf0 ,\
+    \cf4 "understood"\cf0 ,\
+    \cf4 "undertook"\cf0 ,\
+    \cf4 "underwrote"\cf0 ,\
+    \cf4 "undid"\cf0 ,\
+    \cf4 "unfroze"\cf0 ,\
+    \cf4 "unsaid"\cf0 ,\
+    \cf4 "unwound"\cf0 ,\
+    \cf4 "upheld"\cf0 ,\
+    \cf4 "upset"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_u = [\cf4 "unbent"\cf0 ,\
+    \cf4 "underbid"\cf0 ,\
+    \cf4 "undercut"\cf0 ,\
+    \cf4 "undergone"\cf0 ,\
+    \cf4 "underlain"\cf0 ,\
+    \cf4 "underpaid"\cf0 ,\
+    \cf4 "undersold"\cf0 ,\
+    \cf4 "understood"\cf0 ,\
+    \cf4 "undertaken"\cf0 ,\
+    \cf4 "underwritten"\cf0 ,\
+    \cf4 "undone"\cf0 ,\
+    \cf4 "unfrozen"\cf0 ,\
+    \cf4 "unsaid"\cf0 ,\
+    \cf4 "unwound"\cf0 ,\
+    \cf4 "upheld"\cf0 ,\
+    \cf4 "upset"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_u = [\cf4 "\uc0\u1088 \u1072 \u1079 \u1086 \u1075 \u1085 \u1091 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1085 \u1080 \u1078 \u1072 \u1090 \u1100  \u1094 \u1077 \u1085 \u1091 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1073 \u1080 \u1074 \u1072 \u1090 \u1100  \u1094 \u1077 \u1085 \u1099 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1093 \u1086 \u1076 \u1080 \u1090 \u1100 , \u1087 \u1086 \u1076 \u1074 \u1077 \u1088 \u1075 \u1072 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1083 \u1077 \u1078 \u1072 \u1090 \u1100  \u1074  \u1086 \u1089 \u1085 \u1086 \u1074 \u1077 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1087 \u1083 \u1072 \u1095 \u1080 \u1074 \u1072 \u1090 \u1100  \u1089 \u1083 \u1080 \u1096 \u1082 \u1086 \u1084  \u1085 \u1080 \u1079 \u1082 \u1086 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100  \u1076 \u1077 \u1096 \u1077 \u1074 \u1083 \u1077 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1085 \u1080 \u1084 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1077 \u1076 \u1087 \u1088 \u1080 \u1085 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1076 \u1087 \u1080 \u1089 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1085 \u1080 \u1095 \u1090 \u1086 \u1078 \u1072 \u1090 \u1100  \u1089 \u1076 \u1077 \u1083 \u1072 \u1085 \u1085 \u1086 \u1077 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1079 \u1084 \u1086 \u1088 \u1072 \u1078 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1073 \u1088 \u1072 \u1090 \u1100  \u1085 \u1072 \u1079 \u1072 \u1076  \u1089 \u1074 \u1086 \u1080  \u1089 \u1083 \u1086 \u1074 \u1072 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1079 \u1074 \u1077 \u1088 \u1090 \u1099 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1076 \u1076 \u1077 \u1088 \u1078 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1086 \u1087 \u1088 \u1086 \u1082 \u1080 \u1085 \u1091 \u1090 \u1100 , \u1086 \u1075 \u1086 \u1088 \u1095 \u1080 \u1090 \u1100 "\cf0 ]\
+\
+\cf2 //type W\
+\cf0 \
+\cf3 let\cf0  w_header = \cf4 "W"\cf0 \
+\
+\cf3 let\cf0  full_infinitive_type_w = [\cf4 "wake"\cf0 ,\
+    \cf4 "waylay"\cf0 ,\
+    \cf4 "wear"\cf0 ,\
+    \cf4 "weave"\cf0 ,\
+    \cf4 "wed"\cf0 ,\
+    \cf4 "weep"\cf0 ,\
+    \cf4 "wet"\cf0 ,\
+    \cf4 "win"\cf0 ,\
+    \cf4 "wind"\cf0 ,\
+    \cf4 "withdraw"\cf0 ,\
+    \cf4 "withhold"\cf0 ,\
+    \cf4 "withstand"\cf0 ,\
+    \cf4 "work"\cf0 ,\
+    \cf4 "wring"\cf0 ,\
+    \cf4 "write"\cf0 ]\
+\
+\cf3 let\cf0  full_past_indefinite_type_w = [\cf4 "woke, waked"\cf0 ,\
+    \cf4 "waylaid"\cf0 ,\
+    \cf4 "wore"\cf0 ,\
+    \cf4 "wove, weaved"\cf0 ,\
+    \cf4 "wed, wedded"\cf0 ,\
+    \cf4 "wept"\cf0 ,\
+    \cf4 "wet, wetted"\cf0 ,\
+    \cf4 "won"\cf0 ,\
+    \cf4 "wound"\cf0 ,\
+    \cf4 "withdrew"\cf0 ,\
+    \cf4 "withheld"\cf0 ,\
+    \cf4 "withstood"\cf0 ,\
+    \cf4 "worked, wrought"\cf0 ,\
+    \cf4 "wrung"\cf0 ,\
+    \cf4 "wrote"\cf0 ]\
+\
+\cf3 let\cf0  full_participle_type_w = [\cf4 "woken, waked"\cf0 ,\
+    \cf4 "waylaid"\cf0 ,\
+    \cf4 "worn"\cf0 ,\
+    \cf4 "woven, weaved"\cf0 ,\
+    \cf4 "wed, wedded"\cf0 ,\
+    \cf4 "wept"\cf0 ,\
+    \cf4 "wet, wetted"\cf0 ,\
+    \cf4 "won"\cf0 ,\
+    \cf4 "wound"\cf0 ,\
+    \cf4 "withdrawn"\cf0 ,\
+    \cf4 "withheld"\cf0 ,\
+    \cf4 "withstood"\cf0 ,\
+    \cf4 "worked, wrought"\cf0 ,\
+    \cf4 "wrung"\cf0 ,\
+    \cf4 "written"\cf0 ]\
+\
+\cf3 let\cf0  translate_type_w = [\cf4 "\uc0\u1087 \u1088 \u1086 \u1089 \u1099 \u1087 \u1072 \u1090 \u1100 \u1089 \u1103 , \u1073 \u1091 \u1076 \u1080 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1086 \u1076 \u1089 \u1090 \u1077 \u1088 \u1077 \u1075 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1085 \u1086 \u1089 \u1080 \u1090 \u1100  (\u1086 \u1076 \u1077 \u1078 \u1076 \u1091 )"\cf0 ,\
+    \cf4 "\uc0\u1090 \u1082 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1099 \u1076 \u1072 \u1074 \u1072 \u1090 \u1100  \u1079 \u1072 \u1084 \u1091 \u1078 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1083 \u1072 \u1082 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1084 \u1086 \u1095 \u1080 \u1090 \u1100 , \u1091 \u1074 \u1083 \u1072 \u1078 \u1085 \u1103 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1074 \u1099 \u1080 \u1075 \u1088 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1079 \u1072 \u1074 \u1086 \u1076 \u1080 \u1090 \u1100  (\u1084 \u1077 \u1093 \u1072 \u1085 \u1080 \u1079 \u1084 )"\cf0 ,\
+    \cf4 "\uc0\u1074 \u1079 \u1103 \u1090 \u1100  \u1085 \u1072 \u1079 \u1072 \u1076 , \u1086 \u1090 \u1086 \u1079 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1091 \u1076 \u1077 \u1088 \u1078 \u1080 \u1074 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1088 \u1086 \u1090 \u1080 \u1074 \u1080 \u1090 \u1100 \u1089 \u1103 "\cf0 ,\
+    \cf4 "\uc0\u1088 \u1072 \u1073 \u1086 \u1090 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1089 \u1082 \u1088 \u1091 \u1090 \u1080 \u1090 \u1100 , \u1089 \u1078 \u1072 \u1090 \u1100 "\cf0 ,\
+    \cf4 "\uc0\u1087 \u1080 \u1089 \u1072 \u1090 \u1100 "\cf0 ]\
+}

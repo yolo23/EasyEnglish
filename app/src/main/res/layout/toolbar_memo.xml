@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@mipmap/statusbar">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+            <TextView
+                android:id="@+id/verbsTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@drawable/top_left_but"
+                android:textColor="@android:color/white"
+                android:layout_alignParentLeft="true"
+                android:text="Фразовые глаголы"/>
+            <TextView
+                android:id="@+id/idiomsTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:background="@drawable/top_middle"
+                android:textColor="@android:color/white"
+                android:layout_toRightOf="@id/verbsTv"
+                android:text="Идиомы"/>
+            <TextView
+                android:id="@+id/phrasesTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="13sp"
+                android:background="@drawable/top_middle"
+                android:textColor="@android:color/white"
+                android:layout_toRightOf="@id/idiomsTv"
+                android:text="Разговорные фразы"/>
+            <TextView
+                android:id="@+id/slangTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/top_right_but"
+                android:text="Сленг"
+                android:layout_toRightOf="@id/verbsTv"/>
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

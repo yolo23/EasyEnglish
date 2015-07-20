@@ -1,0 +1,23 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="oftenUsedWidth">140dp</dimen>
+    <dimen name="baseTextSize">16sp</dimen>
+    <dimen name="fbTextSize">14sp</dimen>
+    <dimen name="aboutTextWidth">20dp</dimen>
+    <dimen name="aboutNameTopM">10dp</dimen>
+    <dimen name="aboutDefMarg">10dp</dimen>
+    <dimen name="aboutDefTextSize">16sp</dimen>
+    <dimen name="aboutBaseTextHeight">20dp</dimen>
+    <dimen name="aboutFbHeight">20dp</dimen>
+    <dimen name="aboutSmallMargin">5dp</dimen>
+    <dimen name="aboutImage">100dp</dimen>
+    <dimen name="rowGridImage">115dp</dimen>
+    <dimen name="rowGridTitleTextSize">12sp</dimen>
+    <dimen name="toolbarMainGramWidth">180dp</dimen>
+    <dimen name="toolbarMainGramTextSize">16sp</dimen>
+    <dimen name="toolbarMainGoGrammarTextSize">12sp</dimen>
+    <dimen name="drawerMarginImage">30dp</dimen>
+    <dimen name="marginProgress">40dp</dimen>
+</resources>

@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+	<meta http-equiv="CONTENT-TYPE" content="text/html; charset=windows-1252">
+	<title></title>
+	<meta name="GENERATOR" content="OpenOffice.org 3.3  (FreeBSD/amd64)">
+	<meta name="CREATED" content="0;0">
+	<meta name="CHANGED" content="0;0">
+	<style type="text/css">
+	<!--
+		@page { size: 8.26in 11.69in; margin: 1in }
+		P { margin-bottom: 0.08in }
+	-->
+	</style>
+</head>
+<body dir="LTR" style="border: none; padding: 0in" lang="en-US">
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//</font></font></p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//
+ TalkingVerbs.swift</font></font></p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//
+ English</font></font></p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//</font></font></p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//
+ Created by Vlad Kleber on 07.07.15.</font></font></p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//
+ Copyright (c) 2015 Vlad Kleber. All rights reserved.</font></font></p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">import</font></font><font style="font-size: 11pt" size="2">
+Foundation</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//talking
+verbs</font></font></p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//type
+1</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_header_1 = </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1088;&#1080;&#1074;&#1077;&#1090;&#1089;&#1090;&#1074;&#1080;&#1103;
+&#1080; &#1087;&#1088;&#1086;&#1097;&#1072;&#1085;&#1080;&#1103;"</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_1 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"How
+is it going?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"How's
+life?"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"How
+are things?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Long
+time no see!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"What
+are you up to?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"What
+have you been up to?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"See
+you soon!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"See
+you later!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Till
+next time!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Good
+luck!"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Take
+care!"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Talk
+to you later!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Until
+we meet again!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Have
+a nice day!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Have
+a good weekend"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Have
+a safe trip"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Say
+hi to …"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Send
+my love to …"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_translate_1 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1050;&#1072;&#1082;
+&#1080;&#1076;&#1091;&#1090; &#1076;&#1077;&#1083;&#1072;?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1050;&#1072;&#1082;
+&#1078;&#1080;&#1079;&#1085;&#1100;?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1050;&#1072;&#1082;
+&#1086;&#1085;&#1086;?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1044;&#1072;&#1074;&#1085;&#1086;
+&#1085;&#1077; &#1074;&#1080;&#1076;&#1077;&#1083;&#1080;&#1089;&#1100;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1063;&#1077;&#1084;
+&#1079;&#1072;&#1085;&#1080;&#1084;&#1072;&#1077;&#1096;&#1100;&#1089;&#1103;?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1063;&#1077;&#1084;
+&#1079;&#1072;&#1085;&#1080;&#1084;&#1072;&#1083;&#1089;&#1103; &#1074;&#1089;&#1077;
+&#1101;&#1090;&#1086; &#1074;&#1088;&#1077;&#1084;&#1103;?"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1044;&#1086;
+&#1089;&#1082;&#1086;&#1088;&#1086;&#1075;&#1086;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1059;&#1074;&#1080;&#1076;&#1080;&#1084;&#1089;&#1103;
+&#1087;&#1086;&#1079;&#1078;&#1077;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1044;&#1086;
+&#1089;&#1083;&#1077;&#1076;&#1091;&#1102;&#1097;&#1077;&#1075;&#1086;
+&#1088;&#1072;&#1079;&#1072;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1059;&#1076;&#1072;&#1095;&#1080;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1041;&#1077;&#1088;&#1077;&#1075;&#1080;
+&#1089;&#1077;&#1073;&#1103;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1086;&#1075;&#1086;&#1074;&#1086;&#1088;&#1080;&#1084;
+&#1089; &#1090;&#1086;&#1073;&#1086;&#1081; &#1087;&#1086;&#1079;&#1078;&#1077;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1044;&#1086;
+&#1085;&#1086;&#1074;&#1086;&#1081; &#1074;&#1089;&#1090;&#1088;&#1077;&#1095;&#1080;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1061;&#1086;&#1088;&#1086;&#1096;&#1077;&#1075;&#1086;
+&#1076;&#1085;&#1103;!"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1061;&#1086;&#1088;&#1086;&#1096;&#1080;&#1093;
+&#1074;&#1099;&#1093;&#1086;&#1076;&#1085;&#1099;&#1093;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1061;&#1086;&#1088;&#1086;&#1096;&#1077;&#1081;
+&#1087;&#1086;&#1077;&#1079;&#1076;&#1082;&#1080;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1077;&#1088;&#1077;&#1076;&#1072;&#1074;&#1072;&#1081;
+&#1087;&#1088;&#1080;&#1074;&#1077;&#1090; …"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1077;&#1088;&#1077;&#1076;&#1072;&#1074;&#1072;&#1081;
+&#1073;&#1086;&#1083;&#1100;&#1096;&#1086;&#1081; &#1087;&#1088;&#1080;&#1074;&#1077;&#1090;
+… (&#1077;&#1089;&#1083;&#1080; &#1088;&#1077;&#1095;&#1100;
+&#1080;&#1076;&#1077;&#1090; &#1086; &#1088;&#1086;&#1076;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1080;&#1082;&#1072;&#1093;
+&#1080;&#1083;&#1080; &#1073;&#1083;&#1080;&#1079;&#1082;&#1080;&#1093;
+&#1083;&#1102;&#1076;&#1103;&#1093;)"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//type
+2</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_header_2 = </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1074;&#1086;&#1076;&#1085;&#1099;&#1077;
+&#1089;&#1083;&#1086;&#1074;&#1072;"</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_2 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"In
+short / in brief"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"In
+a word"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"As
+far / as to"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Not
+to mention"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"First
+of all/ above all"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"What’s
+more"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"By
+the way"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"After
+all"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Just
+for the record"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"And
+so on and so forth"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"If
+I’m not mistaken"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"In
+other words"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"On
+the contrary"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"The
+thing is"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"So
+as to / so that"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Either
+way"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"As
+a rule"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"As
+well as"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"All
+the same"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"On
+one hand"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"On
+the other hand"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Such
+as"</font></font><font style="font-size: 11pt" size="2">, </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"As
+I said before"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Believe
+it or not, but"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"If
+I remember rightly / If I recall correctly"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_translate_2 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1074;&#1082;&#1088;&#1072;&#1090;&#1094;&#1077;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1074;
+&#1076;&#1074;&#1091;&#1093; &#1089;&#1083;&#1086;&#1074;&#1072;&#1093;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1095;&#1090;&#1086;
+&#1082;&#1072;&#1089;&#1072;&#1077;&#1090;&#1089;&#1103;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1085;&#1077;
+&#1075;&#1086;&#1074;&#1086;&#1088;&#1103; &#1091;&#1078;&#1077; &#1086;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1087;&#1088;&#1077;&#1078;&#1076;&#1077;
+&#1074;&#1089;&#1077;&#1075;&#1086;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1082;&#1088;&#1086;&#1084;&#1077;
+&#1090;&#1086;&#1075;&#1086;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1082;&#1089;&#1090;&#1072;&#1090;&#1080;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1074;
+&#1080;&#1090;&#1086;&#1075;&#1077;; &#1074;&#1089;&#1077;-&#1090;&#1072;&#1082;&#1080;"</font></font><font style="font-size: 11pt" size="2">,
+</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1076;&#1083;&#1103;
+&#1089;&#1087;&#1088;&#1072;&#1074;&#1082;&#1080;; &#1095;&#1090;&#1086;&#1073;&#1099;
+&#1074;&#1099; &#1079;&#1085;&#1072;&#1083;&#1080;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1080;
+&#1090;&#1072;&#1082; &#1076;&#1072;&#1083;&#1077;&#1077;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1077;&#1089;&#1083;&#1080;
+&#1103; &#1085;&#1077; &#1086;&#1096;&#1080;&#1073;&#1072;&#1102;&#1089;&#1100;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1076;&#1088;&#1091;&#1075;&#1080;&#1084;&#1080;
+&#1089;&#1083;&#1086;&#1074;&#1072;&#1084;&#1080;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1085;&#1072;&#1086;&#1073;&#1086;&#1088;&#1086;&#1090;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1076;&#1077;&#1083;&#1086;
+&#1074; &#1090;&#1086;&#1084;, &#1095;&#1090;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1090;&#1072;&#1082;
+&#1095;&#1090;&#1086;&#1073;&#1099;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1090;&#1072;&#1082;
+&#1080;&#1083;&#1080; &#1080;&#1085;&#1072;&#1095;&#1077;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1086;&#1073;&#1099;&#1095;&#1085;&#1086;,
+&#1082;&#1072;&#1082; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1090;&#1072;&#1082;
+&#1078;&#1077;, &#1082;&#1072;&#1082; &#1080;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1073;&#1077;&#1079;
+&#1088;&#1072;&#1079;&#1085;&#1080;&#1094;&#1099;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1089;
+&#1086;&#1076;&#1085;&#1086;&#1081; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1099;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1089;
+&#1076;&#1088;&#1091;&#1075;&#1086;&#1081; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1099;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1085;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1082;&#1072;&#1082;
+&#1103; &#1091;&#1078;&#1077; &#1075;&#1086;&#1074;&#1086;&#1088;&#1080;&#1083;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1074;&#1077;&#1088;&#1080;&#1090;&#1077;
+&#1080;&#1083;&#1080; &#1085;&#1077;&#1090;, &#1085;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1077;&#1089;&#1083;&#1080;
+&#1103; &#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086;
+&#1087;&#1086;&#1084;&#1085;&#1102;"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//type
+3</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_header_3 = </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1057;&#1087;&#1086;&#1089;&#1086;&#1073;&#1099;
+&#1074;&#1099;&#1088;&#1072;&#1079;&#1080;&#1090;&#1100; &#1089;&#1086;&#1075;&#1083;&#1072;&#1089;&#1080;&#1077;
+&#1080;&#1083;&#1080; &#1085;&#1077;&#1089;&#1086;&#1075;&#1083;&#1072;&#1089;&#1080;&#1077;"</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_3 = [    </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"Perhaps"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Of
+course / Sure"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Definitely"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Absolutely"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Naturally"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Probably"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"You
+are right"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"It
+can hardly be so"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Very
+well"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Most
+likely"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Most
+unlikely"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Not
+a bit"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I
+believe so / suppose so"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I
+doubt it"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"No
+way"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Exactly
+so"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Quite
+so"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I
+agree with you"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I
+am afraid you are wrong"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I’m
+afraid so"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I’m
+not sure"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I
+don’t think so"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"In
+a way / to a certain extent"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"No
+doubt"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I’m
+in / I’m game"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I
+think I’ll pass"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Deal!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"It’s
+a great idea!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Not
+a very good idea"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I'm
+looking forward to it"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_translate_3 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1086;&#1079;&#1084;&#1086;&#1078;&#1085;&#1086;,
+&#1084;&#1086;&#1078;&#1077;&#1090; &#1073;&#1099;&#1090;&#1100;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1050;&#1086;&#1085;&#1077;&#1095;&#1085;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1054;&#1087;&#1088;&#1077;&#1076;&#1077;&#1083;&#1077;&#1085;&#1085;&#1086;,
+&#1085;&#1077;&#1087;&#1088;&#1077;&#1084;&#1077;&#1085;&#1085;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1041;&#1077;&#1079;&#1091;&#1089;&#1083;&#1086;&#1074;&#1085;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1045;&#1089;&#1090;&#1077;&#1089;&#1090;&#1074;&#1077;&#1085;&#1085;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1077;&#1088;&#1086;&#1103;&#1090;&#1085;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1099;
+&#1087;&#1088;&#1072;&#1074;&#1099;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1088;&#1103;&#1076;
+&#1083;&#1080; &#1101;&#1090;&#1086; &#1090;&#1072;&#1082;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1054;&#1095;&#1077;&#1085;&#1100;
+&#1093;&#1086;&#1088;&#1086;&#1096;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1057;&#1082;&#1086;&#1088;&#1077;&#1077;
+&#1074;&#1089;&#1077;&#1075;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1088;&#1103;&#1076;
+&#1083;&#1080;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1080;&#1095;&#1091;&#1090;&#1100;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1086;&#1083;&#1072;&#1075;&#1072;&#1102;,
+&#1095;&#1090;&#1086; &#1101;&#1090;&#1086; &#1090;&#1072;&#1082;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1057;&#1086;&#1084;&#1085;&#1077;&#1074;&#1072;&#1102;&#1089;&#1100;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1080;
+&#1079;&#1072; &#1095;&#1090;&#1086;, &#1085;&#1080; &#1074; &#1082;&#1086;&#1077;&#1084;
+&#1089;&#1083;&#1091;&#1095;&#1072;&#1077;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1048;&#1084;&#1077;&#1085;&#1085;&#1086;
+&#1090;&#1072;&#1082;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1087;&#1086;&#1083;&#1085;&#1077;
+&#1074;&#1077;&#1088;&#1085;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1071;
+&#1089; &#1074;&#1072;&#1084;&#1080; &#1089;&#1086;&#1075;&#1083;&#1072;&#1089;&#1077;&#1085;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1041;&#1086;&#1102;&#1089;&#1100;,
+&#1095;&#1090;&#1086; &#1074;&#1099; &#1085;&#1077; &#1087;&#1088;&#1072;&#1074;&#1099;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1041;&#1086;&#1102;&#1089;&#1100;,
+&#1095;&#1090;&#1086; &#1090;&#1072;&#1082;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1077;
+&#1091;&#1074;&#1077;&#1088;&#1077;&#1085;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1071;
+&#1090;&#1072;&#1082; &#1085;&#1077; &#1076;&#1091;&#1084;&#1072;&#1102;;
+&#1074;&#1088;&#1103;&#1076; &#1083;&#1080;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;
+&#1082;&#1072;&#1082;&#1086;&#1084;-&#1090;&#1086; &#1089;&#1084;&#1099;&#1089;&#1083;&#1077;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1077;&#1089;&#1086;&#1084;&#1085;&#1077;&#1085;&#1085;&#1086;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1071;
+«&#1079;&#1072;» (&#1074; &#1086;&#1090;&#1074;&#1077;&#1090;
+&#1085;&#1072; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1077;
+&#1082;&#1091;&#1076;&#1072;-&#1083;&#1080;&#1073;&#1086; &#1089;&#1093;&#1086;&#1076;&#1080;&#1090;&#1100;
+&#1080;&#1083;&#1080; &#1095;&#1090;&#1086;-&#1083;&#1080;&#1073;&#1086;
+&#1089;&#1076;&#1077;&#1083;&#1072;&#1090;&#1100;)"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1051;&#1091;&#1095;&#1096;&#1077;
+&#1073;&#1077;&#1079; &#1084;&#1077;&#1085;&#1103;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1048;&#1076;&#1077;&#1090;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1054;&#1090;&#1083;&#1080;&#1095;&#1085;&#1072;&#1103;
+&#1080;&#1076;&#1077;&#1103;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1077;
+&#1089;&#1072;&#1084;&#1072;&#1103; &#1093;&#1086;&#1088;&#1086;&#1096;&#1072;&#1103;
+&#1080;&#1076;&#1077;&#1103;"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1046;&#1076;&#1091;
+&#1101;&#1090;&#1086;&#1075;&#1086; &#1089; &#1085;&#1077;&#1090;&#1077;&#1088;&#1087;&#1077;&#1085;&#1080;&#1077;&#1084;"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//type
+4</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_header_4 = </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1060;&#1088;&#1072;&#1079;&#1099;
+&#1074;&#1077;&#1078;&#1083;&#1080;&#1074;&#1086;&#1089;&#1090;&#1080;"</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_4 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"I’m
+so sorry!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I
+beg your pardon!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I’m
+sorry, I can’t."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Sorry,
+I meant well."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"It’s
+very kind of you!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Thank
+you anyway!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Thank
+you in advance!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Don’t
+mention it!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"May
+I help you?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"No
+problem / that’s ok!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Don’t
+worry about it!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"This
+way, please!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"After
+you!"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_translate_4 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1052;&#1085;&#1077;
+&#1086;&#1095;&#1077;&#1085;&#1100; &#1078;&#1072;&#1083;&#1100;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1088;&#1086;&#1096;&#1091;
+&#1087;&#1088;&#1086;&#1097;&#1077;&#1085;&#1080;&#1103;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1088;&#1086;&#1089;&#1090;&#1080;&#1090;&#1077;,
+&#1085;&#1077; &#1084;&#1086;&#1075;&#1091;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1048;&#1079;&#1074;&#1080;&#1085;&#1080;&#1090;&#1077;,
+&#1103; &#1093;&#1086;&#1090;&#1077;&#1083; &#1082;&#1072;&#1082;
+&#1083;&#1091;&#1095;&#1096;&#1077;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1069;&#1090;&#1086;
+&#1086;&#1095;&#1077;&#1085;&#1100; &#1084;&#1080;&#1083;&#1086; &#1089;
+&#1074;&#1072;&#1096;&#1077;&#1081; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1099;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;
+&#1083;&#1102;&#1073;&#1086;&#1084; &#1089;&#1083;&#1091;&#1095;&#1072;&#1077;,
+&#1089;&#1087;&#1072;&#1089;&#1080;&#1073;&#1086;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1057;&#1087;&#1072;&#1089;&#1080;&#1073;&#1086;
+&#1079;&#1072;&#1088;&#1072;&#1085;&#1077;&#1077;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1077;
+&#1089;&#1090;&#1086;&#1080;&#1090; &#1073;&#1083;&#1072;&#1075;&#1086;&#1076;&#1072;&#1088;&#1085;&#1086;&#1089;&#1090;&#1080;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1052;&#1086;&#1075;&#1091;
+&#1083;&#1080; &#1103; &#1074;&#1072;&#1084; &#1087;&#1086;&#1084;&#1086;&#1095;&#1100;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1089;&#1077;
+&#1074; &#1087;&#1086;&#1088;&#1103;&#1076;&#1082;&#1077;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1077;
+&#1074;&#1086;&#1083;&#1085;&#1091;&#1081;&#1090;&#1077;&#1089;&#1100;
+&#1086;&#1073; &#1101;&#1090;&#1086;&#1084;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1057;&#1102;&#1076;&#1072;,
+&#1087;&#1086;&#1078;&#1072;&#1083;&#1091;&#1081;&#1089;&#1090;&#1072;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1086;&#1089;&#1083;&#1077;
+&#1074;&#1072;&#1089;!"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#007400"><font style="font-size: 11pt" size="2">//type
+5</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_header_5 = </font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1057;&#1087;&#1086;&#1089;&#1086;&#1073;&#1099;
+&#1087;&#1086;&#1076;&#1076;&#1077;&#1088;&#1078;&#1072;&#1090;&#1100;
+&#1088;&#1072;&#1079;&#1075;&#1086;&#1074;&#1086;&#1088; &#1080;
+&#1086;&#1090;&#1088;&#1077;&#1072;&#1075;&#1080;&#1088;&#1086;&#1074;&#1072;&#1090;&#1100;
+&#1085;&#1072; &#1089;&#1082;&#1072;&#1079;&#1072;&#1085;&#1085;&#1086;&#1077;"</font></font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_5 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"What’s
+the matter?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"What’s
+going on? / What’s happening?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"What’s
+the trouble?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"What’s
+happened?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"How
+was it?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Did
+I get you right?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Don’t
+take it to heart."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I
+didn’t catch the last word."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Sorry,
+I wasn’t listening."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"It
+doesn’t matter."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"It
+is new to me."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Let
+us hope for the best."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"May
+I ask you a question?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Next
+time lucky!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Oh,
+that. That explains it."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Say
+it again, please."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"So
+that’s where the trouble lies!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Things
+happen."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"What
+do you mean?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Where
+were we?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"You
+were saying?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I’m
+sorry, I didn’t catch you."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Lucky
+you!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"Good
+for you!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"I’m
+so happy for you!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"What
+do you know!"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+<p style="margin-bottom: 0in"><br>
+</p>
+<p style="margin-bottom: 0in"><font color="#aa0d91"><font style="font-size: 11pt" size="2">let</font></font><font style="font-size: 11pt" size="2">
+talking_verbs_translate_5 = [</font><font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;
+&#1095;&#1077;&#1084; &#1076;&#1077;&#1083;&#1086;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1063;&#1090;&#1086;
+&#1087;&#1088;&#1086;&#1080;&#1089;&#1093;&#1086;&#1076;&#1080;&#1090;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;
+&#1095;&#1077;&#1084; &#1087;&#1088;&#1086;&#1073;&#1083;&#1077;&#1084;&#1072;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1063;&#1090;&#1086;
+&#1089;&#1083;&#1091;&#1095;&#1080;&#1083;&#1086;&#1089;&#1100;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1091;
+&#1082;&#1072;&#1082;? (&#1050;&#1072;&#1082; &#1074;&#1089;&#1077;
+&#1087;&#1088;&#1086;&#1096;&#1083;&#1086;?)"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1071;
+&#1087;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1086; &#1074;&#1072;&#1089;
+&#1087;&#1086;&#1085;&#1103;&#1083;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1077;
+&#1087;&#1088;&#1080;&#1085;&#1080;&#1084;&#1072;&#1081;&#1090;&#1077;
+&#1073;&#1083;&#1080;&#1079;&#1082;&#1086; &#1082; &#1089;&#1077;&#1088;&#1076;&#1094;&#1091;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1071;
+&#1085;&#1077; &#1087;&#1086;&#1085;&#1103;&#1083; &#1087;&#1086;&#1089;&#1083;&#1077;&#1076;&#1085;&#1077;&#1077;
+&#1089;&#1083;&#1086;&#1074;&#1086;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1048;&#1079;&#1074;&#1080;&#1085;&#1080;&#1090;&#1077;,
+&#1103; &#1087;&#1088;&#1086;&#1089;&#1083;&#1091;&#1096;&#1072;&#1083;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1069;&#1090;&#1086;
+&#1085;&#1077; &#1080;&#1084;&#1077;&#1077;&#1090; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1103;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1069;&#1090;&#1086;
+&#1085;&#1086;&#1074;&#1086;&#1089;&#1090;&#1100; &#1076;&#1083;&#1103;
+&#1084;&#1077;&#1085;&#1103;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1041;&#1091;&#1076;&#1077;&#1084;
+&#1085;&#1072;&#1076;&#1077;&#1103;&#1090;&#1100;&#1089;&#1103; &#1085;&#1072;
+&#1083;&#1091;&#1095;&#1096;&#1077;&#1077;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1052;&#1086;&#1078;&#1085;&#1086;
+&#1079;&#1072;&#1076;&#1072;&#1090;&#1100; &#1074;&#1072;&#1084;
+&#1074;&#1086;&#1087;&#1088;&#1086;&#1089;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1086;&#1074;&#1077;&#1079;&#1077;&#1090;
+&#1074; &#1089;&#1083;&#1077;&#1076;&#1091;&#1102;&#1097;&#1080;&#1081;
+&#1088;&#1072;&#1079;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1086;&#1090;
+&#1086;&#1085;&#1086; &#1095;&#1090;&#1086;, &#1101;&#1090;&#1086;
+&#1074;&#1089;&#1077; &#1086;&#1073;&#1098;&#1103;&#1089;&#1085;&#1103;&#1077;&#1090;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1086;&#1074;&#1090;&#1086;&#1088;&#1080;&#1090;&#1077;
+&#1077;&#1097;&#1077; &#1088;&#1072;&#1079;, &#1087;&#1086;&#1078;&#1072;&#1083;&#1091;&#1081;&#1089;&#1090;&#1072;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1058;&#1072;&#1082;
+&#1074;&#1086;&#1090; &#1074; &#1095;&#1077;&#1084; &#1076;&#1077;&#1083;&#1086;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1089;&#1103;&#1082;&#1086;&#1077;
+&#1073;&#1099;&#1074;&#1072;&#1077;&#1090;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1063;&#1090;&#1086;
+&#1074;&#1099; &#1080;&#1084;&#1077;&#1077;&#1090;&#1077; &#1074;
+&#1074;&#1080;&#1076;&#1091;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1053;&#1072;
+&#1095;&#1077;&#1084; &#1084;&#1099; &#1086;&#1089;&#1090;&#1072;&#1085;&#1086;&#1074;&#1080;&#1083;&#1080;&#1089;&#1100;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1099;
+&#1095;&#1090;&#1086;-&#1090;&#1086; &#1089;&#1082;&#1072;&#1079;&#1072;&#1083;&#1080;?"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1055;&#1088;&#1086;&#1089;&#1090;&#1080;&#1090;&#1077;,
+&#1103; &#1085;&#1077; &#1088;&#1072;&#1089;&#1089;&#1083;&#1099;&#1096;&#1072;&#1083;."</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1042;&#1072;&#1084;
+&#1087;&#1086;&#1074;&#1077;&#1079;&#1083;&#1086;!"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1058;&#1077;&#1084;
+&#1083;&#1091;&#1095;&#1096;&#1077; &#1076;&#1083;&#1103; &#1074;&#1072;&#1089;!
+(&#1042; &#1101;&#1090;&#1086;&#1081; &#1092;&#1088;&#1072;&#1079;&#1077;
+&#1084;&#1085;&#1086;&#1075;&#1086;&#1077; &#1079;&#1072;&#1074;&#1080;&#1089;&#1080;&#1090;
+&#1086;&#1090; &#1080;&#1085;&#1090;&#1086;&#1085;&#1072;&#1094;&#1080;&#1080;,
+&#1095;&#1072;&#1089;&#1090;&#1086; &#1074; &#1085;&#1077;&#1081;
+&#1087;&#1086;&#1076;&#1088;&#1072;&#1079;&#1091;&#1084;&#1077;&#1074;&#1072;&#1077;&#1090;&#1089;&#1103;
+&#1089;&#1072;&#1088;&#1082;&#1072;&#1079;&#1084;: «&#1053;&#1091;-&#1085;&#1091;,
+&#1088;&#1072;&#1076; &#1079;&#1072; &#1090;&#1077;&#1073;&#1103;!»)"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1071;
+&#1090;&#1072;&#1082; &#1088;&#1072;&#1076; &#1079;&#1072; &#1074;&#1072;&#1089;!
+(&#1040; &#1074;&#1086;&#1090; &#1101;&#1090;&#1086; &#1075;&#1086;&#1074;&#1086;&#1088;&#1080;&#1090;&#1089;&#1103;
+&#1072;&#1073;&#1089;&#1086;&#1083;&#1102;&#1090;&#1085;&#1086;
+&#1080;&#1089;&#1082;&#1088;&#1077;&#1085;&#1085;&#1077;)"</font></font><font style="font-size: 11pt" size="2">,</font></p>
+<p style="margin-bottom: 0in">    <font color="#c41a16"><font style="font-size: 11pt" size="2">"&#1050;&#1090;&#1086;
+&#1073;&#1099; &#1084;&#1086;&#1075; &#1087;&#1086;&#1076;&#1091;&#1084;&#1072;&#1090;&#1100;!"</font></font><font style="font-size: 11pt" size="2">]</font></p>
+
+</body></html>

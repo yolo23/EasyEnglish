@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@mipmap/statusbar">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/backIv"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/arrowleft"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_centerHorizontal="true">
+        <TextView
+            android:id="@+id/grammar"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="16sp"
+
+
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:background="@drawable/top_left_but"
+            android:textColor="@android:color/white"
+            android:layout_alignParentLeft="true"
+            android:text="Грамматика"/>
+        <TextView
+            android:id="@+id/tables"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="16sp"
+
+
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/top_right_but"
+            android:text="Таблицы"
+            android:layout_toRightOf="@id/grammar"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>
