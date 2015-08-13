@@ -39,16 +39,25 @@
         android:id="@+id/playerControls"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:paddingTop="14dp"
+        android:paddingTop="0dp"
         android:background="@mipmap/player"
         android:layout_alignParentBottom="true">
+        <TextView
+            android:id="@+id/titleSong"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="2dp"
+            android:layout_alignParentTop="true"/>
         <ImageView
             android:id="@+id/back"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_toLeftOf="@+id/play"
 
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/titleSong"
             android:src="@mipmap/previous"/>
         <ImageView
             android:id="@id/play"
@@ -57,21 +66,21 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/titleSong"
             android:src="@mipmap/play"/>
         <ImageView
             android:id="@+id/next"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_toRightOf="@id/play"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/titleSong"
             android:src="@mipmap/next"/>
         <ImageView
             android:id="@+id/download"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_toRightOf="@id/next"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/titleSong"
             android:layout_marginLeft="8dp"
             android:src="@mipmap/download"/>
         <ProgressBar
@@ -80,15 +89,36 @@
             android:layout_height="30dp"
             android:layout_toRightOf="@id/download"
             android:layout_marginLeft="8dp"
-            android:layout_alignParentTop="true"
+            android:layout_below="@id/titleSong"
             style="?android:attr/android:progressBarStyleSmall" />
+
+        <SeekBar
+            android:layout_below="@id/play"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/seekBar" />
         <TextView
-            android:id="@+id/titleSong"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:gravity="center"
+            android:id="@+id/timePlayed"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
             android:textColor="@android:color/white"
-            android:layout_below="@id/play"/>
+            android:layout_toLeftOf="@id/seekBar"
+            android:layout_below="@id/play"
+            android:gravity="right"
+            android:text="0:00"/>
+        <TextView
+            android:id="@+id/timeTotal"
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:textColor="@android:color/white"
+            android:layout_toRightOf="@id/seekBar"
+            android:layout_below="@id/play"
+            android:gravity="left"
+
+            android:text="0:00"/>
     </RelativeLayout>
+
+
     </RelativeLayout>
 </android.support.v4.widget.SlidingPaneLayout>

@@ -7,6 +7,7 @@ import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,7 +51,8 @@ import retrofit.client.Response;
 /**
  * Created by taiyokaze on 7/18/15.
  */
-public class AudioActivity extends BaseSlidingActivity implements MediaController.MediaPlayerControl {
+public class AudioActivity extends BaseSlidingActivity implements MediaController.MediaPlayerControl,
+        SeekBar.OnSeekBarChangeListener{
 
 
     //service
@@ -57,7 +60,7 @@ public class AudioActivity extends BaseSlidingActivity implements MediaControlle
     private Intent playIntent;
     private boolean musicBound=false;
     private boolean paused=false, playbackPaused=true;
-
+    private Handler mHandler = new Handler();
     TextView titleSong;
 
     RecyclerView recyclerView;
@@ -66,11 +69,14 @@ public class AudioActivity extends BaseSlidingActivity implements MediaControlle
 
     TextView online;
     TextView offline;
-    
+    TextView currentTime;
+    TextView durration;
     ImageView play;
     ImageView back;
     ImageView next;
     ImageView download;
+
+    SeekBar seekBar;
 
 
     @Override
@@ -112,6 +118,10 @@ public class AudioActivity extends BaseSlidingActivity implements MediaControlle
             }
         });
         download = (ImageView) findViewById(R.id.download);
+        seekBar = (SeekBar) findViewById(R.id.seekBar);
+        currentTime = (TextView) findViewById(R.id.timePlayed);
+        durration = (TextView) findViewById(R.id.timeTotal);
+        seekBar.setOnSeekBarChangeListener(this);
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +133,7 @@ public class AudioActivity extends BaseSlidingActivity implements MediaControlle
     private void playPauseSong() {
         if(playbackPaused){
             musicSrv.playSong();
+
             setPlay();
         } else {
             pause();
@@ -137,8 +148,18 @@ public class AudioActivity extends BaseSlidingActivity implements MediaControlle
 
     private void setPlay() {
         titleSong.setText(audioItems.get(musicSrv.getCurrentSongPosition()).getTitle());
+        seekBar.setProgress(songPercent(getCurrentPosition(), getDuration()));
+        seekBar.setMax(100);
         play.setImageResource(R.mipmap.pause);
+        updateSeekBar();
         playbackPaused = false;
+    }
+
+    int songPercent(long currPos, long durration) {
+        if(currPos==0){
+            return 0;
+        }
+        return (int)(currPos/(durration / 100));
     }
 
     private void downloadSong(EnglishAudioItem item) {
@@ -230,6 +251,7 @@ public class AudioActivity extends BaseSlidingActivity implements MediaControlle
     }
     @Override
     protected void onDestroy() {
+        unbindService(musicConnection);
         stopService(playIntent);
         musicSrv = null;
         super.onDestroy();
@@ -373,6 +395,84 @@ public class AudioActivity extends BaseSlidingActivity implements MediaControlle
             setPlay();
         }
 //        controller.show(0);
+    }
+
+    void updateSeekBar() {
+        mHandler.postDelayed(mUpdateTimeTask, 100);
+    }
+    public int progressToTimer(int progress, int totalDuration) {
+        int currentDuration = 0;
+        totalDuration = (int) (totalDuration / 1000);
+        currentDuration = (int) ((((double)progress) / 100) * totalDuration);
+
+        // return current duration in milliseconds
+        return currentDuration * 1000;
+    }
+    public String milliSecondsToTimer(long milliseconds){
+        String finalTimerString = "";
+        String secondsString = "";
+
+        // Convert total duration into time
+        int hours = (int)( milliseconds / (1000*60*60));
+        int minutes = (int)(milliseconds % (1000 * 60 * 60)) / (1000 * 60);
+        int seconds = (int) ((milliseconds % (1000*60*60)) % (1000*60) / 1000);
+        // Add hours if there
+        if(hours > 0){
+            finalTimerString = hours + ":";
+        }
+
+        // Prepending 0 to seconds if it is one digit
+        if(seconds < 10){
+            secondsString = "0" + seconds;
+        }else{
+            secondsString = "" + seconds;}
+
+        finalTimerString = finalTimerString + minutes + ":" + secondsString;
+
+        // return timer string
+        return finalTimerString;
+    }
+
+    private Runnable mUpdateTimeTask = new Runnable() {
+        public void run() {
+            long totalDuration = getDuration();
+            long currentDuration = getCurrentPosition();
+
+            // Displaying Total Duration time
+            durration.setText(""+milliSecondsToTimer(totalDuration));
+            // Displaying time completed playing
+            currentTime.setText(""+milliSecondsToTimer(currentDuration));
+
+            // Updating progress bar
+            int progress = songPercent(currentDuration, totalDuration);
+            //Log.d("Progress", ""+progress);
+            seekBar.setProgress(progress);
+
+            // Running this thread after 100 milliseconds
+            mHandler.postDelayed(this, 100);
+        }
+    };
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+        mHandler.removeCallbacks(mUpdateTimeTask);
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        mHandler.removeCallbacks(mUpdateTimeTask);
+        int totalDuration = getDuration();
+        int currentPosition = progressToTimer(seekBar.getProgress(), totalDuration);
+
+        // forward or backward to certain seconds
+        seekTo(currentPosition);
+
+        // update timer progress again
+        updateSeekBar();
     }
 
     public class DownloadFile extends AsyncTask<EnglishAudioItem, Void, String> {
