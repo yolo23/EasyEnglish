@@ -73,8 +73,6 @@ public class GrammarFragment extends Fragment {
                 "file:///android_asset/conditional_mood.html"));
         grammarLinksList.add(new GrammarLinks("Сослагательное наклонение",
                 "file:///android_asset/subjunctive_mood.html"));
-        grammarLinksList.add(new GrammarLinks("Наречия",
-                "file:///android_asset/participle.html"));
     }
 
     @Nullable

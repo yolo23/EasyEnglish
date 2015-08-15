@@ -30,7 +30,7 @@ public class TableFragment extends Fragment {
         grammarTableLinksList.add(new GrammarLinks("Английские местоимения в таблице", "file:///android_asset/pronouns.html"));
         grammarTableLinksList.add(new GrammarLinks("Английские прилагательные в таблице", "file:///android_asset/adjectives.html"));
         grammarTableLinksList.add(new GrammarLinks("Английские глаголы в таблице", "file:///android_asset/verbs.html"));
-        grammarTableLinksList.add(new GrammarLinks("Английские наречия в таблице", "file:///android_asset/"));
+        grammarTableLinksList.add(new GrammarLinks("Английские наречия в таблице", "file:///android_asset/participle.html"));
         grammarTableLinksList.add(new GrammarLinks("Вопросы(действия)", "file:///android_asset/questions_actions.html"));
 
     }
