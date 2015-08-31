@@ -19,7 +19,7 @@
             android:layout_centerHorizontal="true"
             android:padding="8dp">
             <TextView
-                android:id="@+id/online"
+                android:id="@+id/regular"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -29,9 +29,9 @@
                 android:background="@drawable/top_left_but"
                 android:textColor="@android:color/white"
                 android:layout_alignParentLeft="true"
-                android:text="Онлайн"/>
+                android:text="Regular"/>
             <TextView
-                android:id="@+id/offline"
+                android:id="@+id/irregular"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -40,8 +40,8 @@
                 android:paddingLeft="8dp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/top_right_but"
-                android:text="Оффлайн"
-                android:layout_toRightOf="@id/online"/>
+                android:text="Irregular"
+                android:layout_toRightOf="@id/regular"/>
         </RelativeLayout>
     </RelativeLayout>
 

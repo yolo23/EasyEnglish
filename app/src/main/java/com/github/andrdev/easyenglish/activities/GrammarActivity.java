@@ -25,7 +25,6 @@ public class GrammarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar);
         toolbar = (Toolbar) findViewById(R.id.eeToolbar);
-
         getSupportFragmentManager().beginTransaction().add(R.id.frame, new GrammarFragment()).commit();
         grammarTv = (TextView)toolbar.findViewById(R.id.grammar);
         grammarTv.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +57,6 @@ public class GrammarActivity extends AppCompatActivity {
         tableTv.setBackgroundDrawable(getResources().getDrawable(R.drawable.top_right_sel_but));
         tableTv.setTextColor(0xFF428093);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame, new TableFragment()).commit();
-
     }
 
     void setGrammarLinksFragment(){
@@ -67,6 +65,5 @@ public class GrammarActivity extends AppCompatActivity {
         grammarTv.setBackgroundDrawable(getResources().getDrawable(R.drawable.top_left_sel_but));
         grammarTv.setTextColor(0xFF428093);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame, new GrammarFragment()).commit();
-
     }
 }

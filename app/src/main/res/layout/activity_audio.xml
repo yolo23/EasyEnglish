@@ -34,9 +34,10 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/eeToolbar"/>
+            android:layout_below="@id/eeToolbar"
+            android:layout_above="@+id/playerControls"/>
     <RelativeLayout
-        android:id="@+id/playerControls"
+        android:id="@id/playerControls"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:paddingTop="0dp"

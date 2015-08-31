@@ -70,6 +70,6 @@ public class AboutActivity  extends BaseSlidingActivity {
 
     @Override
     int getCurrentActivityPostion() {
-        return 6;
+        return 7;
     }
 }

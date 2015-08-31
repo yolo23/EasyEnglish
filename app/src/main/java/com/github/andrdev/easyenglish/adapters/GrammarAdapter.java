@@ -38,6 +38,9 @@ public class GrammarAdapter extends RecyclerView.Adapter<GrammarAdapter.GrammarH
         viewHolder.title.setText(data.get(i).getTitle());
     }
 
+    public List<GrammarLinks> getData(){
+        return data;
+    }
     @Override
     public int getItemCount() {
         return data.size();

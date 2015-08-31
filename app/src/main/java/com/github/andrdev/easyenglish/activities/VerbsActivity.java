@@ -275,6 +275,6 @@ public class VerbsActivity extends BaseSlidingActivity implements Verbs {
 
     @Override
     int getCurrentActivityPostion() {
-        return 1;
+        return 2;
     }
 }

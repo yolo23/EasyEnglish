@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SlidingPanel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/ground">
+    <RelativeLayout
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left">
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/logo"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/menuList"
+            android:layout_marginTop="@dimen/drawerMarginImage"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/icon"
+            android:paddingLeft="16dp"/>
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@mipmap/ground"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include
+        android:id="@+id/eeToolbar"
+        layout="@layout/toolbar_table_act"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/eeToolbar"/>
+</RelativeLayout>
+</android.support.v4.widget.SlidingPaneLayout>

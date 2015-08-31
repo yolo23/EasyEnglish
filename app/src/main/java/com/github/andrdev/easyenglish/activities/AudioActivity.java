@@ -203,7 +203,7 @@ public class AudioActivity extends BaseSlidingActivity implements MediaControlle
 
     @Override
     int getCurrentActivityPostion() {
-        return 2;
+        return 3;
     }
 
     private void initToolbar() {

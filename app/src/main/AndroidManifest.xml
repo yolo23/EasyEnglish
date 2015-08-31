@@ -25,6 +25,9 @@
             android:name=".activities.GrammarActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".activities.TableActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activities.GrammarLinkActivity"
             android:screenOrientation="portrait" />
         <activity

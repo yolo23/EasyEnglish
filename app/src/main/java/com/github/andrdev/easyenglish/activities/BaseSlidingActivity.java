@@ -31,6 +31,7 @@ abstract public class BaseSlidingActivity extends AppCompatActivity {
     static List<DrawerLine> drawerLines = new ArrayList<>();
     static{
         drawerLines.add(new DrawerLine(R.mipmap.gramm, "Грамматика"));
+        drawerLines.add(new DrawerLine(R.mipmap.table, "Таблица"));
         drawerLines.add(new DrawerLine(R.mipmap.irregular, "Неправильные глаголы"));
         drawerLines.add(new DrawerLine(R.mipmap.audio, "Аудио-курс"));
         drawerLines.add(new DrawerLine(R.mipmap.video, "Видео-курс"));
@@ -100,26 +101,31 @@ abstract public class BaseSlidingActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 1:
-                intent = new Intent(this, VerbsActivity.class);
+                intent = new Intent(this, TableActivity.class);
                 startActivity(intent);
                 break;
             case 2:
+                intent = new Intent(this, VerbsActivity.class);
+                startActivity(intent);
+                break;
+
+            case 3:
                 intent = new Intent(this, AudioActivity.class);
                 startActivity(intent);
                 break;
-            case 3:
+            case 4:
                 intent = new Intent(this, VideoActivity.class);
                 startActivity(intent);
                 break;
-            case 4:
+            case 5:
                 intent = new Intent(this, MemoActivity.class);
                 startActivity(intent);
                 break;
-            case 5:
+            case 6:
                 intent = new Intent(this, FactsActivity.class);
                 startActivity(intent);
                 break;
-            case 6:
+            case 7:
                 intent = new Intent(this, AboutActivity.class);
                 startActivity(intent);
                 break;

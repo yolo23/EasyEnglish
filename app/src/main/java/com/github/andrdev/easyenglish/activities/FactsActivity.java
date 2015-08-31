@@ -52,6 +52,6 @@ public class FactsActivity extends BaseSlidingActivity {
 
     @Override
     int getCurrentActivityPostion() {
-        return 5;
+        return 6;
     }
 }

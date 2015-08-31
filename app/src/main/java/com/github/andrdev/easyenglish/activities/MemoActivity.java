@@ -379,7 +379,7 @@ public class MemoActivity extends BaseSlidingActivity implements Slang, PhVerb, 
 
     @Override
     int getCurrentActivityPostion() {
-        return 4;
+        return 5;
     }
 
     void setVerbs() {
